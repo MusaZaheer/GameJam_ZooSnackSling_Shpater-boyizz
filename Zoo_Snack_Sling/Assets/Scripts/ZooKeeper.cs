@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI; //important
+using UnityEngine.AI; 
 
-//if you use this code you are contractually obligated to like the YT video
-public class RandomMovement : MonoBehaviour //don't forget to change the script name if you haven't
+
+public class RandomMovement : MonoBehaviour 
 {
-    public NavMeshAgent agent;
+    /*public NavMeshAgent agent;
     public float walkRadius = 10f;
     public float waitTime = 3f;
     
@@ -39,7 +39,28 @@ public class RandomMovement : MonoBehaviour //don't forget to change the script 
         NavMesh.SamplePosition(randomDirection, out navHit, dist, layermask);
 
         return navHit.position;
+    }*/
+
+    public Transform[] waypoints; 
+    private int currentWaypointIndex = 0;
+    private NavMeshAgent agent;
+
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        if (waypoints.Length > 0)
+        {
+            agent.SetDestination(waypoints[currentWaypointIndex].position);
+        }
     }
 
-    
+    void Update()
+    {
+        if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
+        {
+            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+            agent.SetDestination(waypoints[currentWaypointIndex].position);
+        }
+    }
+
 }
