@@ -9,10 +9,11 @@ public class SlingShot : MonoBehaviour
 {
     public Transform slingshotAnchor;
     public Rigidbody projectileRb;  // Food
-    public float launchForceMultiplier = 10f;
+    public float launchForceMultiplier = 3f;
     public LineRenderer lineRenderer;
     public int numPoints = 100; // Number of points in the trajectory line
     public float timeStep = 0.1f;   // Time difference between the points
+    public float seconds = 2f;  // Time to wait before respawning the projectile
 
     private SpringJoint springJoint;
     private bool isDragging = false;
@@ -81,7 +82,7 @@ public class SlingShot : MonoBehaviour
         Debug.Log("Projectile released");
 
         // Call the respawn function after 5 seconds
-        slingshotReload.Invoke("RespawnProjectile", 5f);
+        slingshotReload.Invoke("RespawnProjectile", seconds);
     }
 
     void DeattachSpringJoint()
