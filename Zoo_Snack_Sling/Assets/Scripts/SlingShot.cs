@@ -22,6 +22,7 @@ public class SlingShot : MonoBehaviour
     private bool isDragging = false;
     private Vector3 initialDragPosition;
     public TrailRenderer trailRenderer;
+    
 
     void Start()
     {
@@ -29,6 +30,17 @@ public class SlingShot : MonoBehaviour
         springJoint.connectedAnchor = slingshotAnchor.position; // Setting anchor position of spring joint
         trailRenderer.enabled = false;
     }
+    // void SpawnNewProjectile()
+    // {
+    //     // Instantiate a new projectile and set it up
+    //     currentProjectileRb = Instantiate(projectilePrefab, slingshotAnchor.position, Quaternion.identity);
+    //     currentProjectileRb.isKinematic = true;
+
+    //     // Attach a new Spring Joint to the new projectile
+    //     springJoint = currentProjectileRb.gameObject.AddComponent<SpringJoint>();
+    //     springJoint.connectedAnchor = slingshotAnchor.position;
+    //     trailRenderer.enabled = false;
+    // }
 
     void Update()
     {
@@ -63,11 +75,6 @@ public class SlingShot : MonoBehaviour
         Vector3 mousePosition = Input.mousePosition;    // Get X, Y coordinates of mouse, Z considered to be 0
         mousePosition.z = Mathf.Abs(Camera.main.transform.position.z - slingshotAnchor.position.z); // Calculate Z position based on the distance from the camera to the slingshot anchor.
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);  // Converting the mouse position to world position
-
-        // Adjust world position for isometric view (constrain to XY plane while keeping Z constant)
-        Vector3 dragDirection = worldPosition - slingshotAnchor.position;
-        dragDirection.z = 0;  // Constrain to XY plane
-        worldPosition = slingshotAnchor.position + dragDirection;
 
         projectileRb.position = worldPosition;  // Set the projectile position to the world position
 
