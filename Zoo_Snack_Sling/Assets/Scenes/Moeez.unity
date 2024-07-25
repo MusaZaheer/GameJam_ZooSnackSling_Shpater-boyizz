@@ -546,7 +546,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 342903816}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.8
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -858,7 +858,7 @@ Transform:
   m_GameObject: {fileID: 485427158}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -8.67, y: 1, z: 1.5}
+  m_LocalPosition: {x: -8.5, y: 1, z: 1}
   m_LocalScale: {x: 24, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1500,7 +1500,7 @@ Transform:
   m_GameObject: {fileID: 1293775950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 8.35, y: 1, z: 1.5}
+  m_LocalPosition: {x: 8.5, y: 1, z: 1}
   m_LocalScale: {x: 24, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
