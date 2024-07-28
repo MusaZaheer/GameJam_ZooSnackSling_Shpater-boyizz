@@ -243,7 +243,6 @@ GameObject:
   - component: {fileID: 72072789}
   - component: {fileID: 72072794}
   - component: {fileID: 72072793}
-  - component: {fileID: 72072795}
   m_Layer: 0
   m_Name: Baander
   m_TagString: Animal
@@ -352,6 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeStep: 0.1
+  forceMultiplier: 3
 --- !u!54 &72072794
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -379,19 +379,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &72072795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 72072788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0656141f64c934d95d3891f3fb0348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StuckObjectTag: Food
 --- !u!1 &185799511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1236,6 @@ GameObject:
   - component: {fileID: 958062449}
   - component: {fileID: 958062454}
   - component: {fileID: 958062453}
-  - component: {fileID: 958062455}
   m_Layer: 0
   m_Name: Gaynda
   m_TagString: Animal
@@ -1358,6 +1344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeStep: 0.1
+  forceMultiplier: 3
 --- !u!54 &958062454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1385,19 +1372,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &958062455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 958062448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0656141f64c934d95d3891f3fb0348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StuckObjectTag: Food
 --- !u!1 &1054365759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,6 +1624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeStep: 0.1
+  forceMultiplier: 3
 --- !u!1 &1446757532
 GameObject:
   m_ObjectHideFlags: 0
