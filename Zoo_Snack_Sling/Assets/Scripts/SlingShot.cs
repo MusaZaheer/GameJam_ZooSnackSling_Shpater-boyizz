@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Script for implementation of Slingshot for projectile motion mechanics
-/// </summary>
 public class SlingShot : MonoBehaviour
 {
+    #region public variables
     public Transform slingshotAnchor;
     public Rigidbody projectileRb;  // Food
     public float launchForceMultiplier = 3f;
@@ -14,26 +12,32 @@ public class SlingShot : MonoBehaviour
     public int numPoints = 100; // Number of points in the trajectory line
     public float timeStep = 0.1f;   // Time difference between the points
     public float seconds = 2f;  // Time to wait before respawning the projectile
+    public TrailRenderer trailRenderer;
+     public float maxStretch = 3f;  // Maximum stretch distance
+    public Transform launchStartPoint; // Fixed launch start point
+    #endregion
 
+    #region private variables
     private SpringJoint springJoint;
     private bool isDragging = false;
     private Vector3 initialDragPosition;
-    public TrailRenderer trailRenderer;
-
+    private bool foodAccess; // Flag to access the food object when in the initial position only
     private SlingshotReload slingshotReload;
+    #endregion
 
     void Start()
     {
         springJoint = projectileRb.GetComponent<SpringJoint>(); // Getting spring joint component
         springJoint.connectedAnchor = slingshotAnchor.position; // Setting anchor position of spring joint
         trailRenderer.enabled = false;
-
+        foodAccess = true;
+        Debug.Log("Food Can Be Accessed, Start");
         slingshotReload = FindObjectOfType<SlingshotReload>(); // Find the SlingshotReload script in the scene
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && foodAccess)
         {
             StartDrag();
         }
@@ -53,7 +57,6 @@ public class SlingShot : MonoBehaviour
     {
         isDragging = true;
         projectileRb.isKinematic = true;
-
         initialDragPosition = projectileRb.position; // Starting position of the attacker becomes the initial drag position
         Debug.Log("Drag started");
     }
@@ -63,26 +66,25 @@ public class SlingShot : MonoBehaviour
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = Mathf.Abs(Camera.main.transform.position.z - slingshotAnchor.position.z);
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-
         projectileRb.position = worldPosition;
 
         Vector3 velocity = CalculateVelocity();
         VisualizeTrajectory(projectileRb.position, velocity);
-        Debug.Log("Dragging");
     }
 
     void ReleaseProjectile()
     {
         isDragging = false;
+        foodAccess = false;
+        Debug.Log("Food Can NOT Be Accessed, ReleaseProjectile");
 
         Vector3 velocity = CalculateVelocity();
         projectileRb.isKinematic = false;
         projectileRb.AddForce(velocity, ForceMode.Impulse);
         trailRenderer.enabled = true;
-        Debug.Log("Projectile released");
 
-        // Call the respawn function after 5 seconds
-        slingshotReload.Invoke("RespawnProjectile", seconds);
+        // Call the respawn function after the specified seconds
+        Invoke(nameof(RespawnProjectile), seconds);
     }
 
     void DeattachSpringJoint()
@@ -92,7 +94,6 @@ public class SlingShot : MonoBehaviour
             springJoint.connectedBody = null;
             Destroy(springJoint);
             springJoint = null;
-            Debug.Log("Spring joint detached");
         }
     }
 
@@ -100,7 +101,6 @@ public class SlingShot : MonoBehaviour
     {
         Vector3 releaseDirection = (initialDragPosition - projectileRb.position).normalized;
         float releaseDistance = Vector3.Distance(initialDragPosition, projectileRb.position);
-
         Vector3 velocity = releaseDirection * releaseDistance * launchForceMultiplier;
         return velocity;
     }
@@ -108,7 +108,6 @@ public class SlingShot : MonoBehaviour
     void VisualizeTrajectory(Vector3 startPosition, Vector3 velocity)
     {
         lineRenderer.positionCount = numPoints;
-
         for (int i = 0; i < numPoints; i++)
         {
             float t = i * timeStep;
@@ -127,5 +126,13 @@ public class SlingShot : MonoBehaviour
     void ClearTrajectory()
     {
         lineRenderer.positionCount = 0;
+    }
+
+    public void RespawnProjectile()
+    {
+        slingshotReload.RespawnProjectile();
+        trailRenderer.enabled = false;
+        foodAccess = true; // Enable food access after respawning the projectile
+        Debug.Log("Food Can Be Accessed, RespawnProjectile");
     }
 }
