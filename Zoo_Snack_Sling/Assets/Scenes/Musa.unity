@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1338,6 +1338,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3784421852bdf174f807051dc60088f0, type: 3}
+--- !u!4 &1852918299 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3549674857491822579, guid: f060a34d9b62253499ca7f93f301c402,
+    type: 3}
+  m_PrefabInstance: {fileID: 4176034331229970823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1920731454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1638,6 +1644,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2213087479569832628, guid: f060a34d9b62253499ca7f93f301c402,
+        type: 3}
+      propertyPath: maxStretch
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213087479569832628, guid: f060a34d9b62253499ca7f93f301c402,
+        type: 3}
+      propertyPath: launchStartPoint
+      value: 
+      objectReference: {fileID: 1852918299}
     - target: {fileID: 5828815237306224465, guid: f060a34d9b62253499ca7f93f301c402,
         type: 3}
       propertyPath: m_LocalPosition.x

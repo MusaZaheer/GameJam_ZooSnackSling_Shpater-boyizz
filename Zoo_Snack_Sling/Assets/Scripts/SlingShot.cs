@@ -13,7 +13,7 @@ public class SlingShot : MonoBehaviour
     public float timeStep = 0.1f;   // Time difference between the points
     public float seconds = 2f;  // Time to wait before respawning the projectile
     public TrailRenderer trailRenderer;
-     public float maxStretch = 3f;  // Maximum stretch distance
+    public float maxStretch = 0.5f;  // Maximum stretch distance
     public Transform launchStartPoint; // Fixed launch start point
     #endregion
 
@@ -33,6 +33,7 @@ public class SlingShot : MonoBehaviour
         foodAccess = true;
         Debug.Log("Food Can Be Accessed, Start");
         slingshotReload = FindObjectOfType<SlingshotReload>(); // Find the SlingshotReload script in the scene
+        SetProjectileToLaunchStartPoint(); // Set projectile to the fixed launch start point
     }
 
     void Update()
@@ -63,9 +64,23 @@ public class SlingShot : MonoBehaviour
 
     void DragProjectile()
     {
+        //Setting the position of the projectile to the mouse position
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = Mathf.Abs(Camera.main.transform.position.z - slingshotAnchor.position.z);
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        // Calculate the distance and direction from the slingshot anchor to the mouse position in the world
+        Vector3 direction = (worldPosition - slingshotAnchor.position).normalized;
+        //now the distance between the anchor and the mouse position is calculated so that the projectile does not go beyond the maximum stretch
+        float distance = Vector3.Distance(worldPosition, slingshotAnchor.position);
+
+        // If the distance is greater than the maximum stretch, clamp it to the maximum stretch
+        if (distance > maxStretch)
+        {
+            worldPosition = slingshotAnchor.position + direction * maxStretch;
+            //worldPosition = slingshotAnchor.position + direction;
+        }
+
         projectileRb.position = worldPosition;
 
         Vector3 velocity = CalculateVelocity();
@@ -134,5 +149,13 @@ public class SlingShot : MonoBehaviour
         trailRenderer.enabled = false;
         foodAccess = true; // Enable food access after respawning the projectile
         Debug.Log("Food Can Be Accessed, RespawnProjectile");
+        SetProjectileToLaunchStartPoint(); // Set projectile to the fixed launch start point
     }
+
+    void SetProjectileToLaunchStartPoint()
+    {
+        projectileRb.position = launchStartPoint.position;
+        projectileRb.rotation = launchStartPoint.rotation;
+    }
+
 }
