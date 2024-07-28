@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI; 
@@ -6,41 +6,6 @@ using UnityEngine.AI;
 
 public class RandomMovement : MonoBehaviour 
 {
-    /*public NavMeshAgent agent;
-    public float walkRadius = 10f;
-    public float waitTime = 3f;
-    
-    private float timer;
-
-    void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
-        timer = waitTime;
-    }
-
-    void Update()
-    {
-        timer += Time.deltaTime;
-
-        if (timer >= waitTime)
-        {
-            Vector3 newPos = RandomNavSphere(transform.position, walkRadius, -1);
-            agent.SetDestination(newPos);
-            timer = 0;
-        }
-    }
-
-    public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
-    {
-        Vector3 randomDirection = Random.insideUnitSphere * dist;
-        randomDirection += origin;
-        
-        NavMeshHit navHit;
-        NavMesh.SamplePosition(randomDirection, out navHit, dist, layermask);
-
-        return navHit.position;
-    }*/
-
     public Transform[] waypoints; 
     private int currentWaypointIndex = 0;
     private NavMeshAgent agent;
@@ -63,4 +28,81 @@ public class RandomMovement : MonoBehaviour
         }
     }
 
+}*/
+using UnityEngine;
+using UnityEngine.AI;
+using System.Collections;
+using System.Collections.Generic;
+
+public class ZookeeperPatrol : MonoBehaviour
+{
+    public Transform[] fixedWaypoints; 
+    public Transform[] alertWaypoints; 
+    public float normalSpeed = 3.5f;
+    public float alertSpeedMultiplier = 2.5f;
+
+    private int currentWaypointIndex = 0;
+    private NavMeshAgent agent;
+    private Coroutine alertCoroutine;
+
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed = normalSpeed;
+        if (fixedWaypoints.Length > 0)
+        {
+            agent.SetDestination(fixedWaypoints[currentWaypointIndex].position);
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            TriggerAlert(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            TriggerAlert(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            TriggerAlert(2);
+        }
+
+        if (alertCoroutine == null && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        {
+            currentWaypointIndex = (currentWaypointIndex + 1) % fixedWaypoints.Length;
+            agent.SetDestination(fixedWaypoints[currentWaypointIndex].position);
+        }
+    }
+
+    public void TriggerAlert(int waypointIndex)
+    {
+        if (waypointIndex >= 0 && waypointIndex < alertWaypoints.Length)
+        {
+            if (alertCoroutine != null)
+            {
+                StopCoroutine(alertCoroutine);
+            }
+            alertCoroutine = StartCoroutine(CheckAlertWaypoint(waypointIndex));
+        }
+    }
+
+    private IEnumerator CheckAlertWaypoint(int waypointIndex)
+    {
+        agent.speed = normalSpeed * alertSpeedMultiplier;
+        agent.SetDestination(alertWaypoints[waypointIndex].position);
+
+        while (agent.remainingDistance > agent.stoppingDistance || agent.pathPending)
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(2);
+
+        agent.speed = normalSpeed;
+        alertCoroutine = null;
+        agent.SetDestination(fixedWaypoints[currentWaypointIndex].position);
+    }
 }
