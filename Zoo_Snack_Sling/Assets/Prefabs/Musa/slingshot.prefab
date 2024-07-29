@@ -283,7 +283,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -424,7 +424,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -725,6 +725,11 @@ PrefabInstance:
       objectReference: {fileID: 5046993275845751661}
     - target: {fileID: 7815901438399619601, guid: 8977688d207c4bb40934b186e334d590,
         type: 3}
+      propertyPath: launchStartPoint
+      value: 
+      objectReference: {fileID: 3549674857491822579}
+    - target: {fileID: 7815901438399619601, guid: 8977688d207c4bb40934b186e334d590,
+        type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 952334919825649069}
@@ -736,7 +741,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7718128759800210346, guid: 8977688d207c4bb40934b186e334d590,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 85939821142832188}
   m_SourcePrefab: {fileID: 100100000, guid: 8977688d207c4bb40934b186e334d590, type: 3}
 --- !u!54 &952334919825649069 stripped
 Rigidbody:
@@ -750,6 +759,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8269136290454829221}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &85939821142832188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863806976652729103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0656141f64c934d95d3891f3fb0348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StuckObjectTag: Dog
 --- !u!4 &3549674857491822579 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4864773654199045974, guid: 8977688d207c4bb40934b186e334d590,

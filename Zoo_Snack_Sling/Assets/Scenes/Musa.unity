@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1462,12 +1462,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3784421852bdf174f807051dc60088f0, type: 3}
---- !u!4 &1852918299 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3549674857491822579, guid: f060a34d9b62253499ca7f93f301c402,
-    type: 3}
-  m_PrefabInstance: {fileID: 4176034331229970823}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1920731454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1768,36 +1762,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2213087479569832628, guid: f060a34d9b62253499ca7f93f301c402,
-        type: 3}
-      propertyPath: maxStretch
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2213087479569832628, guid: f060a34d9b62253499ca7f93f301c402,
-        type: 3}
-      propertyPath: maxLeftLimit
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2213087479569832628, guid: f060a34d9b62253499ca7f93f301c402,
-        type: 3}
-      propertyPath: maxRightLimit
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2213087479569832628, guid: f060a34d9b62253499ca7f93f301c402,
-        type: 3}
-      propertyPath: launchStartPoint
-      value: 
-      objectReference: {fileID: 1852918299}
-    - target: {fileID: 3482674193798049302, guid: f060a34d9b62253499ca7f93f301c402,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4380379557499201070, guid: f060a34d9b62253499ca7f93f301c402,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5828815237306224465, guid: f060a34d9b62253499ca7f93f301c402,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1856,31 +1820,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1863806976652729103, guid: f060a34d9b62253499ca7f93f301c402,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4176034331229970825}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f060a34d9b62253499ca7f93f301c402, type: 3}
---- !u!1 &4176034331229970824 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1863806976652729103, guid: f060a34d9b62253499ca7f93f301c402,
-    type: 3}
-  m_PrefabInstance: {fileID: 4176034331229970823}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4176034331229970825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4176034331229970824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0656141f64c934d95d3891f3fb0348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StuckObjectTag: Dog
 --- !u!1001 &4807752886167366196
 PrefabInstance:
   m_ObjectHideFlags: 0
