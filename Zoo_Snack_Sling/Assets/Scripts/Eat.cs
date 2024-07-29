@@ -6,11 +6,22 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class Eat : MonoBehaviour
 {
-    public string StuckObjectTag = "Dog"; // Let say thr food is a bone , or a meat, or a fish, or a dog snack....bhai kuch bhi smjh lo filhal k liye
+    public enum FoodType { Meat, Leafs, Grass }
+    public FoodType foodType;
+
+    // Tags for the respective animals
+    private Dictionary<FoodType, string> foodToAnimalMap = new Dictionary<FoodType, string>
+    {
+        { FoodType.Meat, "Tiger" },
+        { FoodType.Leafs, "Deer" },
+        { FoodType.Grass, "Markhor" }
+    };
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag(StuckObjectTag))
+        string targetAnimalTag = foodToAnimalMap[foodType];
+
+        if (other.gameObject.CompareTag(targetAnimalTag))
         {
             // Set the Rigidbody to be kinematic so it doesn't move or affect the animal physically
             GetComponent<Rigidbody>().isKinematic = true;
@@ -18,7 +29,7 @@ public class Eat : MonoBehaviour
             // Deactivate the food object
             gameObject.SetActive(false);
 
-            Debug.Log("Mnay kha lia");
+            Debug.Log("Eaten by " + targetAnimalTag);
         }
     }
 }

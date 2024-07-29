@@ -7,6 +7,9 @@ TagManager:
   - Animal
   - Food
   - Dog
+  - Tiger
+  - Deer
+  - Markhor
   layers:
   - Default
   - TransparentFX
