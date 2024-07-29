@@ -152,19 +152,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.1536839, z: 2.9977207}
   m_Center: {x: 0, y: 0.7168418, z: -0.020073129}
---- !u!114 &69224013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69224009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0656141f64c934d95d3891f3fb0348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StuckObjectTag: Dog
 --- !u!54 &69224014
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -318,10 +305,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 728939101}
-    - targetCorrespondingSourceObject: {fileID: 2875564884836494837, guid: 73848ec92fd6b7c4aad2899b90e04a92,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 728939100}
   m_SourcePrefab: {fileID: 100100000, guid: 73848ec92fd6b7c4aad2899b90e04a92, type: 3}
 --- !u!1001 &232883787
 PrefabInstance:
@@ -418,10 +401,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 69224014}
-    - targetCorrespondingSourceObject: {fileID: 6157942801237219124, guid: 6408ff771db00d445a47d45ebf193542,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 69224013}
   m_SourcePrefab: {fileID: 100100000, guid: 6408ff771db00d445a47d45ebf193542, type: 3}
 --- !u!4 &258083007 stripped
 Transform:
@@ -748,19 +727,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.14, y: 0.29264235, z: 0.25901687}
   m_Center: {x: 0, y: 0.15, z: 0.02005129}
---- !u!114 &491549976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491549972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0656141f64c934d95d3891f3fb0348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StuckObjectTag: Dog
 --- !u!54 &491549977
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -883,10 +849,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 491549977}
-    - targetCorrespondingSourceObject: {fileID: 2875564884836494837, guid: 73848ec92fd6b7c4aad2899b90e04a92,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 491549976}
   m_SourcePrefab: {fileID: 100100000, guid: 73848ec92fd6b7c4aad2899b90e04a92, type: 3}
 --- !u!4 &574549379 stripped
 Transform:
@@ -1203,19 +1165,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.14, y: 0.29264235, z: 0.25901687}
   m_Center: {x: 0, y: 0.15, z: 0.02005129}
---- !u!114 &728939100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728939096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0656141f64c934d95d3891f3fb0348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StuckObjectTag: Dog
 --- !u!54 &728939101
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1577,19 +1526,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.9818814, z: 1.7169997}
   m_Center: {x: 0.000000004060958, y: 1.0409406, z: 0.1281117}
---- !u!114 &1093357639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093357636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0656141f64c934d95d3891f3fb0348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StuckObjectTag: Dog
 --- !u!54 &1093357640
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1861,10 +1797,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1933361560}
-    - targetCorrespondingSourceObject: {fileID: 3812405880036346250, guid: adc04e0e0c14f1342812939ca59b4067,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1933361559}
   m_SourcePrefab: {fileID: 100100000, guid: adc04e0e0c14f1342812939ca59b4067, type: 3}
 --- !u!4 &1733922334 stripped
 Transform:
@@ -1945,19 +1877,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.9884611, z: 1.8738788}
   m_Center: {x: -0.0000000010762073, y: 1.0188333, z: 0.07843952}
---- !u!114 &1933361559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1933361556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0656141f64c934d95d3891f3fb0348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StuckObjectTag: Dog
 --- !u!54 &1933361560
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2419,10 +2338,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1093357640}
-    - targetCorrespondingSourceObject: {fileID: 3812405880036346250, guid: adc04e0e0c14f1342812939ca59b4067,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1093357639}
   m_SourcePrefab: {fileID: 100100000, guid: adc04e0e0c14f1342812939ca59b4067, type: 3}
 --- !u!1001 &795133634128833029
 PrefabInstance:
