@@ -15,7 +15,7 @@ public class SlingShot : MonoBehaviour
     public TrailRenderer trailRenderer;
     public float maxStretch = 0.5f;  // Maximum stretch distance
     public float maxLeftLimit = -0.5f; // Maximum left limit
-    public float maxRightLimit = 0.5f; // Maximum right limit
+    public float maxRightLimit = 100f; // Maximum right limit
     public Transform launchStartPoint; // Fixed launch start point
     #endregion
 
@@ -86,8 +86,8 @@ public class SlingShot : MonoBehaviour
         // Clamp the x-coordinate within the left and right limits
         float clampedX = Mathf.Clamp(worldPosition.x, slingshotAnchor.position.x + maxLeftLimit, slingshotAnchor.position.x + maxRightLimit);
         // Ensure the projectile cannot be dragged behind the slingshot anchor
-        float clampedZ = Mathf.Min(worldPosition.z, slingshotAnchor.position.z);
-        worldPosition = new Vector3(clampedX, worldPosition.y, clampedZ);
+        // float clampedZ = Mathf.Min(worldPosition.z, slingshotAnchor.position.z);
+        //worldPosition = new Vector3(clampedX, worldPosition.y, clampedZ);
 
 
         projectileRb.position = worldPosition;
