@@ -26,10 +26,24 @@ public class Eat : MonoBehaviour
             // Set the Rigidbody to be kinematic so it doesn't move or affect the animal physically
             GetComponent<Rigidbody>().isKinematic = true;
             
-            // Deactivate the food object
-            gameObject.SetActive(false);
+            // Find the AnimalHunger component and update its hunger
+            AnimalHunger animalHunger = other.gameObject.GetComponent<AnimalHunger>();
+            if (animalHunger != null && animalHunger.full == false)
+            {
+                animalHunger.Eat();
+                // Deactivate the food object
+                gameObject.SetActive(false);
+                Debug.Log("Eaten by " + targetAnimalTag);
+            }
+            else if(animalHunger.full == true)
+            {
+                Debug.Log("Animal is full");
+            }
+            else{
+                Debug.Log("Wrong animal");
+            }
 
-            Debug.Log("Eaten by " + targetAnimalTag);
+            
         }
     }
 }
