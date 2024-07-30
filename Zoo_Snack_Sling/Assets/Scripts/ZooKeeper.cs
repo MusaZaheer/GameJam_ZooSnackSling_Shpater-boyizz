@@ -105,4 +105,15 @@ public class ZookeeperPatrol : MonoBehaviour
         alertCoroutine = null;
         agent.SetDestination(fixedWaypoints[currentWaypointIndex].position);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Food"))
+        {
+            
+            Debug.Log("Game Over: Zookeeper found food.");
+           
+            Time.timeScale = 0; 
+        }
+    }
 }
