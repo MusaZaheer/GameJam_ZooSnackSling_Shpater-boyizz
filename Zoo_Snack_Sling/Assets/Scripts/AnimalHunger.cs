@@ -5,17 +5,16 @@ using UnityEngine.UI;
 
 public class AnimalHunger : MonoBehaviour
 {
-    public int maxHunger = 3; // Maximum hunger value (e.g., full after eating twice)
-    private int currentHunger;
-    public Slider hungerBar; // Reference to the hunger bar UI Slider
+    public int maxHunger = 3;   // Maximum hunger value (e.g., full after eating twice)
+    public int currentHunger;   // Initialize currentHunger to 0
+    public Slider hungerBar;    // Reference to the hunger bar UI Slider
     public bool full;
 
     void Start()
     {
-        currentHunger = 0;  // Initialize currentHunger to 0
-        hungerBar.maxValue = maxHunger;  // Set max value of hungerBar
-        hungerBar.value = currentHunger;  // Set initial value of hungerBar
-        full = false;  // Initialize full flag to false
+        hungerBar.maxValue = maxHunger;     // Set max value of hungerBar
+        hungerBar.value = currentHunger;    // Set initial value of hungerBar
+        full = false;                       // Initialize full flag to false
         UpdateHungerBar();
     }
 

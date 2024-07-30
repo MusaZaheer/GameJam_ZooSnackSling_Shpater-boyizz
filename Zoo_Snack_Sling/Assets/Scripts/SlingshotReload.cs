@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 [System.Serializable]
 public class FoodPool
@@ -14,9 +13,9 @@ public class SlingshotReload : MonoBehaviour
 {
     public static SlingshotReload mypool;   // making obj of this calss to be used in any other script
     public List<FoodPool> foodPool;         // all public data from user saved in this onj
-    public List<GameObject> pooledfood;     // food currently present in the pool
-    public GameObject currentFood;          // Keep track of the current active food
-    public int destroyed = 0;                   // Number of foods destroyed 
+    private List<GameObject> pooledfood;     // food currently present in the pool
+    private GameObject currentFood;          // Keep track of the current active food
+    private int destroyed = 0;               // Number of foods destroyed 
     private void Awake()
     {
         mypool = this;
