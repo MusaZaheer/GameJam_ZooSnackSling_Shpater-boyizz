@@ -17,7 +17,7 @@ public class Eat : MonoBehaviour
         { FoodType.Grass, "Markhor" }
     };
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         string targetAnimalTag = foodToAnimalMap[foodType];
 
@@ -25,25 +25,24 @@ public class Eat : MonoBehaviour
         {
             // Set the Rigidbody to be kinematic so it doesn't move or affect the animal physically
             GetComponent<Rigidbody>().isKinematic = true;
-            
+
             // Find the AnimalHunger component and update its hunger
             AnimalHunger animalHunger = other.gameObject.GetComponent<AnimalHunger>();
-            if (animalHunger != null && animalHunger.full == false)
+            if (animalHunger != null && !animalHunger.full)
             {
                 animalHunger.Eat();
                 // Deactivate the food object
                 gameObject.SetActive(false);
                 Debug.Log("Eaten by " + targetAnimalTag);
             }
-            else if(animalHunger.full == true)
+            else if (animalHunger.full)
             {
                 Debug.Log("Animal is full");
             }
-            else{
+            else
+            {
                 Debug.Log("Wrong animal");
             }
-
-            
         }
     }
 }

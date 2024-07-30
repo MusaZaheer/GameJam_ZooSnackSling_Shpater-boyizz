@@ -33,7 +33,7 @@ public class SlingShot : MonoBehaviour
         springJoint.connectedAnchor = slingshotAnchor.position; // Setting anchor position of spring joint
         trailRenderer.enabled = false;
         foodAccess = true;
-        Debug.Log("Food Can Be Accessed, Start");
+        //Debug.Log("Food Can Be Accessed, Start");
         slingshotReload = FindObjectOfType<SlingshotReload>(); // Find the SlingshotReload script in the scene
         SetProjectileToLaunchStartPoint(); // Set projectile to the fixed launch start point
     }
@@ -61,7 +61,7 @@ public class SlingShot : MonoBehaviour
         isDragging = true;
         projectileRb.isKinematic = true;
         initialDragPosition = projectileRb.position; // Starting position of the attacker becomes the initial drag position
-        Debug.Log("Drag started");
+        //Debug.Log("Drag started");
     }
 
     void DragProjectile()
@@ -100,7 +100,7 @@ public class SlingShot : MonoBehaviour
     {
         isDragging = false;
         foodAccess = false;
-        Debug.Log("Food Can NOT Be Accessed, ReleaseProjectile");
+        //Debug.Log("Food Can NOT Be Accessed, ReleaseProjectile");
 
         Vector3 velocity = CalculateVelocity();
         projectileRb.isKinematic = false;
@@ -157,7 +157,7 @@ public class SlingShot : MonoBehaviour
         slingshotReload.RespawnProjectile();
         trailRenderer.enabled = false;
         foodAccess = true; // Enable food access after respawning the projectile
-        Debug.Log("Food Can Be Accessed, RespawnProjectile");
+        //Debug.Log("Food Can Be Accessed, RespawnProjectile");
         SetProjectileToLaunchStartPoint(); // Set projectile to the fixed launch start point
     }
 

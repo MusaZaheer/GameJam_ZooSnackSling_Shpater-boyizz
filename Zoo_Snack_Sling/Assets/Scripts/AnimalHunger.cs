@@ -9,33 +9,36 @@ public class AnimalHunger : MonoBehaviour
     private int currentHunger;
     public Slider hungerBar; // Reference to the hunger bar UI Slider
     public bool full;
+
     void Start()
     {
-        currentHunger = 0;
-        full = false;
+        currentHunger = 0;  // Initialize currentHunger to 0
+        hungerBar.maxValue = maxHunger;  // Set max value of hungerBar
+        hungerBar.value = currentHunger;  // Set initial value of hungerBar
+        full = false;  // Initialize full flag to false
         UpdateHungerBar();
     }
 
     public void Eat()
     {
-        if (currentHunger < maxHunger)
+        if (!full)  // Check if the animal is not full
         {
-            currentHunger++;
-
+            currentHunger++;  // Increment currentHunger
+            if (currentHunger >= maxHunger)
+            {
+                full = true;  // Set full flag to true if currentHunger reaches maxHunger
+            }
             Debug.Log("Current Hunger: " + currentHunger);
-            UpdateHungerBar();
+            UpdateHungerBar();  // Update hunger bar
         }
-        else if (currentHunger == maxHunger)
+        else
         {
-            full = true;
+            Debug.Log("Animal is already full.");
         }
     }
 
     void UpdateHungerBar()
     {
-        // float normalizedHunger = Mathf.Clamp01((float)currentHunger / maxHunger);
-        // Debug.Log("Normalized Hunger: " + normalizedHunger);
-        // hungerBar.value = normalizedHunger;
-        hungerBar.value++;
+        hungerBar.value = currentHunger;  // Set the hunger bar value to currentHunger
     }
 }
