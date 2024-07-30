@@ -6,15 +6,16 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class Eat : MonoBehaviour
 {
-    public enum FoodType { Meat, Leafs, Grass }
+    public enum FoodType { Meat, Greenapple, Apple ,Banana}
     public FoodType foodType;
 
     // Tags for the respective animals
     private Dictionary<FoodType, string> foodToAnimalMap = new Dictionary<FoodType, string>
     {
         { FoodType.Meat, "Tiger" },
-        { FoodType.Leafs, "Deer" },
-        { FoodType.Grass, "Markhor" }
+        { FoodType.Greenapple, "Deer" },
+        { FoodType.Apple, "Markhor" },
+        { FoodType.Banana, "Monkey" }
     };
 
     private void OnTriggerEnter(Collider other)

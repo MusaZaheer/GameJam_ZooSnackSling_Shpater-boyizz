@@ -1,24 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
+
+[System.Serializable]
+public class FoodPool
+{
+    public GameObject foodPrefab;
+    public int numberOfFood = 1;
+}
 
 public class SlingshotReload : MonoBehaviour
 {
-    public GameObject foodPrefab; // The food GameObject to spawn
-    public int numberOfFood = 10; // Number of food objects to create
-
-    private List<GameObject> foodPool;
-    private GameObject currentFood; // Keep track of the current active food
+    public static SlingshotReload mypool;   // making obj of this calss to be used in any other script
+    public List<FoodPool> foodPool;         // all public data from user saved in this onj
+    public List<GameObject> pooledfood;     // food currently present in the pool
+    public GameObject currentFood;          // Keep track of the current active food
+    public int destroyed = 0;                   // Number of foods destroyed 
+    private void Awake()
+    {
+        mypool = this;
+    }
 
     void Start()
     {
-        foodPool = new List<GameObject>();
+        pooledfood = new List<GameObject>();
 
-        for (int i = 0; i < numberOfFood; i++)
+        foreach (FoodPool food in foodPool)
         {
-            GameObject food = Instantiate(foodPrefab, transform.position, Quaternion.identity, transform);
-            food.SetActive(false);
-            foodPool.Add(food);
+            for (int i = 0; i < food.numberOfFood; i++)
+            {
+                GameObject obj = Instantiate(food.foodPrefab, transform.position, Quaternion.identity, transform);
+                obj.SetActive(false);
+                pooledfood.Add(obj);
+            }
         }
 
         RespawnProjectile(); // Spawn the first food at the start
@@ -26,21 +41,24 @@ public class SlingshotReload : MonoBehaviour
 
     public void RespawnProjectile()
     {
+        Debug.Log("Respawn Called");
         if (currentFood != null)
         {
-            currentFood.SetActive(false); // Deactivate the current food
+            Destroy(currentFood); // Deactivate the current food
+            destroyed++;
         }
 
-        foreach (GameObject food in foodPool)
+        for (int i=destroyed ; i<pooledfood.Count; i++)
         {
-            if (!food.activeInHierarchy)
+            if (!pooledfood[i].activeInHierarchy)
             {
-                food.transform.position = transform.position;
-                food.SetActive(true);
-                currentFood = food; // Set the new food as the current active food
+                pooledfood[i].transform.position = transform.position;
+                pooledfood[i].SetActive(true);
+                currentFood = pooledfood[i]; // Set the new food as the current active food
                 currentFood.GetComponent<Rigidbody>().isKinematic = true; // Ensure the food is kinematic
                 break;
             }
         }
+
     }
 }
