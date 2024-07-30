@@ -1578,7 +1578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f9cb02f31862a47a6a14ca8fc4c884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHunger: 2
+  maxHunger: 3
   hungerBar: {fileID: 941879140}
   full: 0
 --- !u!1001 &763551194
@@ -2193,7 +2193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f9cb02f31862a47a6a14ca8fc4c884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHunger: 2
+  maxHunger: 3
   hungerBar: {fileID: 180578745}
   full: 0
 --- !u!1001 &1202389244
@@ -2729,7 +2729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f9cb02f31862a47a6a14ca8fc4c884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHunger: 2
+  maxHunger: 3
   hungerBar: {fileID: 454196876}
   full: 0
 --- !u!224 &1939565132 stripped
