@@ -33,14 +33,14 @@ public class SlingShot : MonoBehaviour
         springJoint.connectedAnchor = slingshotAnchor.position; // Setting anchor position of spring joint
         trailRenderer.enabled = false;
         foodAccess = true;
-        //Debug.Log("Food Can Be Accessed, Start");
         slingshotReload = FindObjectOfType<SlingshotReload>(); // Find the SlingshotReload script in the scene
         SetProjectileToLaunchStartPoint(); // Set projectile to the fixed launch start point
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && foodAccess)
+        //food can only be dragged when 1) mouse is clicked 2) food is in the initial position 3) mouse/ finger is on the projectile
+        if (Input.GetMouseButtonDown(0) && foodAccess && IsMouseOnProjectile())
         {
             StartDrag();
         }
@@ -55,15 +55,28 @@ public class SlingShot : MonoBehaviour
             ReleaseProjectile();
         }
     }
+    //this function is to check if the mouse is on the projectile
+   bool IsMouseOnProjectile()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
+        if (Physics.Raycast(ray, out hit))
+        {
+            // Check if the object hit by the raycast is the projectile or its child
+            return hit.collider.gameObject == projectileRb.gameObject || hit.collider.transform.IsChildOf(projectileRb.transform);
+        }
+        return false;
+    }
+
+    //start dragging the projectile
     void StartDrag()
     {
         isDragging = true;
         projectileRb.isKinematic = true;
         initialDragPosition = projectileRb.position; // Starting position of the attacker becomes the initial drag position
-        //Debug.Log("Drag started");
     }
-
+    //drag the projectile
     void DragProjectile()
     {
         //Setting the position of the projectile to the mouse position
@@ -95,7 +108,7 @@ public class SlingShot : MonoBehaviour
         Vector3 velocity = CalculateVelocity();
         VisualizeTrajectory(projectileRb.position, velocity);
     }
-
+    //throw or launch the projectile
     void ReleaseProjectile()
     {
         isDragging = false;
@@ -110,7 +123,7 @@ public class SlingShot : MonoBehaviour
         // Call the respawn function after the specified seconds
         Invoke(nameof(RespawnProjectile), seconds);
     }
-
+    //this function is to deattach the spring joint
     void DeattachSpringJoint()
     {
         if (springJoint != null)
@@ -120,7 +133,7 @@ public class SlingShot : MonoBehaviour
             springJoint = null;
         }
     }
-
+    //calculating the velocity of the projectile
     Vector3 CalculateVelocity()
     {
         Vector3 releaseDirection = (initialDragPosition - projectileRb.position).normalized;
@@ -128,7 +141,7 @@ public class SlingShot : MonoBehaviour
         Vector3 velocity = releaseDirection * releaseDistance * launchForceMultiplier;
         return velocity;
     }
-
+    //drawing the trajectory line
     void VisualizeTrajectory(Vector3 startPosition, Vector3 velocity)
     {
         lineRenderer.positionCount = numPoints;
@@ -139,19 +152,19 @@ public class SlingShot : MonoBehaviour
             lineRenderer.SetPosition(i, newPosition);
         }
     }
-
+    //calculating position of projectile when dragged till a specific position
     Vector3 CalculatePositionAtTime(Vector3 startPosition, Vector3 initialVelocity, float time)
     {
         Vector3 gravity = Physics.gravity;
         Vector3 position = startPosition + initialVelocity * time + 0.5f * gravity * time * time;
         return position;
     }
-
+    //clear the trajectory line
     void ClearTrajectory()
     {
         lineRenderer.positionCount = 0;
     }
-
+    //this function is to respawn the projectile after the specified seconds
     public void RespawnProjectile()
     {
         slingshotReload.RespawnProjectile();
@@ -161,10 +174,12 @@ public class SlingShot : MonoBehaviour
         SetProjectileToLaunchStartPoint(); // Set projectile to the fixed launch start point
     }
 
+    //this function is to make sure that food is projected only from the fixed starting point i.e. doesnt leave its initial position    
     void SetProjectileToLaunchStartPoint()
     {
         projectileRb.position = launchStartPoint.position;
         projectileRb.rotation = launchStartPoint.rotation;
     }
+    
 
 }

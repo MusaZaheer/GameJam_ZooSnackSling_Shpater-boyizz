@@ -5873,6 +5873,16 @@ PrefabInstance:
       propertyPath: foodPool.Array.data[3].numberOfFood
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3162130675783349217, guid: aa2503b973eb79d44ac4e94e03b19422,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 3162130675783349217, guid: aa2503b973eb79d44ac4e94e03b19422,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 38.12
+      objectReference: {fileID: 0}
     - target: {fileID: 3979887652946373255, guid: aa2503b973eb79d44ac4e94e03b19422,
         type: 3}
       propertyPath: m_LocalScale.x
