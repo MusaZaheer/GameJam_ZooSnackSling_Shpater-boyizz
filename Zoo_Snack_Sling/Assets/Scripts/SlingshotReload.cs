@@ -40,7 +40,7 @@ public class SlingshotReload : MonoBehaviour
 
     public void RespawnProjectile()
     {
-        Debug.Log("Respawn Called");
+        //Debug.Log("Respawn Called");
         if (currentFood != null)
         {
             Destroy(currentFood); // Deactivate the current food

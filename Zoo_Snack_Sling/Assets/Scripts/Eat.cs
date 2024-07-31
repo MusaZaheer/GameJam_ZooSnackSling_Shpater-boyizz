@@ -8,6 +8,7 @@ public class Eat : MonoBehaviour
 {
     public enum FoodType { Meat, Greenapple, Apple ,Banana}
     public FoodType foodType;
+    public string wrongAnimal;
 
     // Tags for the respective animals
     private Dictionary<FoodType, string> foodToAnimalMap = new Dictionary<FoodType, string>
@@ -40,10 +41,11 @@ public class Eat : MonoBehaviour
             {
                 Debug.Log("Animal is full");
             }
-            else
-            {
-                Debug.Log("Wrong animal");
-            }
+        } 
+        //Moeez, here we will know about the wrong animal, you can use the wrongAnimal variable for ur implementation. For now, the var is public.
+        else if(!other.gameObject.CompareTag("Untagged")){
+            wrongAnimal = other.gameObject.tag;
+            Debug.Log("Wrong animal: " + wrongAnimal);
         }
     }
 }
