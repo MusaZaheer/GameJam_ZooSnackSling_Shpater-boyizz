@@ -57,19 +57,6 @@ public class ZookeeperPatrol : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            TriggerAlert(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            TriggerAlert(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            TriggerAlert(2);
-        }
-
         if (alertCoroutine == null && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
             currentWaypointIndex = (currentWaypointIndex + 1) % fixedWaypoints.Length;
@@ -77,15 +64,19 @@ public class ZookeeperPatrol : MonoBehaviour
         }
     }
 
-    public void TriggerAlert(int waypointIndex)
+    public void TriggerAlertByAnimalName(string animalName)
     {
-        if (waypointIndex >= 0 && waypointIndex < alertWaypoints.Length)
+        for (int i = 0; i < alertWaypoints.Length; i++)
         {
-            if (alertCoroutine != null)
+            if (alertWaypoints[i].tag == animalName)
             {
-                StopCoroutine(alertCoroutine);
+                if (alertCoroutine != null)
+                {
+                    StopCoroutine(alertCoroutine);
+                }
+                alertCoroutine = StartCoroutine(CheckAlertWaypoint(i));
+                break;
             }
-            alertCoroutine = StartCoroutine(CheckAlertWaypoint(waypointIndex));
         }
     }
 

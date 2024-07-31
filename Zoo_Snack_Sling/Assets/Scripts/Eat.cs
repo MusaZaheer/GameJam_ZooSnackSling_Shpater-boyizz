@@ -44,8 +44,13 @@ public class Eat : MonoBehaviour
         } 
         //Moeez, here we will know about the wrong animal, you can use the wrongAnimal variable for ur implementation. For now, the var is public.
         else if(!other.gameObject.CompareTag("Untagged")){
+            ZookeeperPatrol zookeeper = FindObjectOfType<ZookeeperPatrol>();
             wrongAnimal = other.gameObject.tag;
             Debug.Log("Wrong animal: " + wrongAnimal);
+            if (zookeeper != null)
+            {
+                zookeeper.TriggerAlertByAnimalName(wrongAnimal);
+            }
         }
     }
 }
