@@ -33,6 +33,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class ZookeeperPatrol : MonoBehaviour
 {
@@ -40,19 +41,25 @@ public class ZookeeperPatrol : MonoBehaviour
     public Transform[] alertWaypoints; 
     public float normalSpeed = 3.5f;
     public float alertSpeedMultiplier = 2.5f;
+    public int maxLives = 3;
 
     private int currentWaypointIndex = 0;
     private NavMeshAgent agent;
     private Coroutine alertCoroutine;
+    private int currentLives;
+    private bool isCooldown = false; 
+    public Image[] hearts;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = normalSpeed;
+        currentLives = maxLives;
         if (fixedWaypoints.Length > 0)
         {
             agent.SetDestination(fixedWaypoints[currentWaypointIndex].position);
         }
+        UpdateHeartsUI();
     }
 
     void Update()
@@ -99,12 +106,44 @@ public class ZookeeperPatrol : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Food"))
+        if (other.CompareTag("tester") && !isCooldown)
         {
-            
-            Debug.Log("Game Over: Zookeeper found food.");
-           
-            Time.timeScale = 0; 
+            StartCoroutine(LoseLifeWithCooldown());
+        }
+    }
+
+    private IEnumerator LoseLifeWithCooldown()
+    {
+        isCooldown = true;
+
+        LoseLife();
+        Debug.Log("Lost Life.");
+        yield return new WaitForSeconds(1); 
+        Debug.Log("After Cooldown.");
+        isCooldown = false;
+    }
+
+    private void LoseLife()
+    {
+        if (currentLives >= 0)
+        {
+            currentLives--;
+            Debug.Log("Remaining Lives: " + currentLives);
+            UpdateHeartsUI();
+            //Debug.Log("Remaining Lives: " + currentLives);
+            if (currentLives <= 0)
+            {
+                Debug.Log("Game Over: Zookeeper ran out of lives.");
+                Time.timeScale = 0; 
+            }
+        }
+    }
+
+    private void UpdateHeartsUI()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            hearts[i].enabled = i < currentLives;
         }
     }
 }
