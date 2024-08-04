@@ -10,6 +10,7 @@ TagManager:
   - Tiger
   - Deer
   - Markhor
+  - tester
   layers:
   - Default
   - TransparentFX
