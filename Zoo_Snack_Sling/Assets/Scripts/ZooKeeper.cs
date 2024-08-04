@@ -33,6 +33,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class ZookeeperPatrol : MonoBehaviour
 {
@@ -44,6 +45,10 @@ public class ZookeeperPatrol : MonoBehaviour
     private int currentWaypointIndex = 0;
     private NavMeshAgent agent;
     private Coroutine alertCoroutine;
+
+    public int maxLives = 3;
+    private int currentLives;
+    public Image[] hearts;
 
     void Start()
     {
@@ -101,10 +106,26 @@ public class ZookeeperPatrol : MonoBehaviour
     {
         if (other.CompareTag("Food"))
         {
-            
-            Debug.Log("Game Over: Zookeeper found food.");
-           
-            Time.timeScale = 0; 
+            LoseLife();
+        }
+    }
+
+    private void LoseLife()
+    {
+        currentLives--;
+        UpdateHeartsUI();
+        if (currentLives <= 0)
+        {
+            Debug.Log("Game Over: Zookeeper ran out of lives.");
+            //Time.timeScale = 0;
+        }
+    }
+
+    private void UpdateHeartsUI()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            hearts[i].enabled = i < currentLives;
         }
     }
 }
