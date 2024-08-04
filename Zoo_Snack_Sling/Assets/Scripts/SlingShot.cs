@@ -5,11 +5,12 @@ using UnityEngine;
 public class SlingShot : MonoBehaviour
 {
     #region public variables
+    [SerializeField] public int viusalizerTrimmer = 15; //use this variable to reduce the number of points in the trajectory line
     public Transform slingshotAnchor;
     public Rigidbody projectileRb;  // Food
     public float launchForceMultiplier = 3f;
     public LineRenderer lineRenderer;
-    public int numPoints = 100; // Number of points in the trajectory line
+    public int numPoints = 10; // Reduced number of points in the trajectory line
     public float timeStep = 0.1f;   // Time difference between the points
     public float seconds = 2f;  // Time to wait before respawning the projectile
     public TrailRenderer trailRenderer;
@@ -17,6 +18,7 @@ public class SlingShot : MonoBehaviour
     public float maxLeftLimit = -0.5f; // Maximum left limit
     public float maxRightLimit = 100f; // Maximum right limit
     public Transform launchStartPoint; // Fixed launch start point
+    public Material dottedLineMaterial; // Material for the dotted line
     #endregion
 
     #region private variables
@@ -35,6 +37,12 @@ public class SlingShot : MonoBehaviour
         foodAccess = true;
         slingshotReload = FindObjectOfType<SlingshotReload>(); // Find the SlingshotReload script in the scene
         SetProjectileToLaunchStartPoint(); // Set projectile to the fixed launch start point
+
+        // Assign the dotted line material to the LineRenderer
+        if (lineRenderer != null && dottedLineMaterial != null)
+        {
+            lineRenderer.material = dottedLineMaterial;
+        }
     }
 
     void Update()
@@ -55,8 +63,9 @@ public class SlingShot : MonoBehaviour
             ReleaseProjectile();
         }
     }
+
     //this function is to check if the mouse is on the projectile
-   bool IsMouseOnProjectile()
+    bool IsMouseOnProjectile()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -76,6 +85,7 @@ public class SlingShot : MonoBehaviour
         projectileRb.isKinematic = true;
         initialDragPosition = projectileRb.position; // Starting position of the attacker becomes the initial drag position
     }
+
     //drag the projectile
     void DragProjectile()
     {
@@ -108,6 +118,7 @@ public class SlingShot : MonoBehaviour
         Vector3 velocity = CalculateVelocity();
         VisualizeTrajectory(projectileRb.position, velocity);
     }
+
     //throw or launch the projectile
     void ReleaseProjectile()
     {
@@ -123,6 +134,7 @@ public class SlingShot : MonoBehaviour
         // Call the respawn function after the specified seconds
         Invoke(nameof(RespawnProjectile), seconds);
     }
+
     //this function is to deattach the spring joint
     void DeattachSpringJoint()
     {
@@ -133,6 +145,7 @@ public class SlingShot : MonoBehaviour
             springJoint = null;
         }
     }
+
     //calculating the velocity of the projectile
     Vector3 CalculateVelocity()
     {
@@ -141,17 +154,28 @@ public class SlingShot : MonoBehaviour
         Vector3 velocity = releaseDirection * releaseDistance * launchForceMultiplier;
         return velocity;
     }
+
     //drawing the trajectory line
     void VisualizeTrajectory(Vector3 startPosition, Vector3 velocity)
+{
+    lineRenderer.positionCount = numPoints;
+
+    // Calculate the total flight time
+    float totalFlightTime = (2 * velocity.y / -Physics.gravity.y);
+    float halfFlightTime = totalFlightTime / 2;
+    int midNumPoints = Mathf.RoundToInt(numPoints / viusalizerTrimmer);
+
+    for (int i = 0; i < midNumPoints; i++)
     {
-        lineRenderer.positionCount = numPoints;
-        for (int i = 0; i < numPoints; i++)
-        {
-            float t = i * timeStep;
-            Vector3 newPosition = CalculatePositionAtTime(startPosition, velocity, t);
-            lineRenderer.SetPosition(i, newPosition);
-        }
+        float t = i * timeStep;
+        Vector3 newPosition = CalculatePositionAtTime(startPosition, velocity, t);
+        lineRenderer.SetPosition(i, newPosition);
     }
+
+    // Update the position count to midNumPoints
+    lineRenderer.positionCount = midNumPoints;
+}
+
     //calculating position of projectile when dragged till a specific position
     Vector3 CalculatePositionAtTime(Vector3 startPosition, Vector3 initialVelocity, float time)
     {
@@ -159,11 +183,13 @@ public class SlingShot : MonoBehaviour
         Vector3 position = startPosition + initialVelocity * time + 0.5f * gravity * time * time;
         return position;
     }
+
     //clear the trajectory line
     void ClearTrajectory()
     {
         lineRenderer.positionCount = 0;
     }
+
     //this function is to respawn the projectile after the specified seconds
     public void RespawnProjectile()
     {
@@ -180,6 +206,4 @@ public class SlingShot : MonoBehaviour
         projectileRb.position = launchStartPoint.position;
         projectileRb.rotation = launchStartPoint.rotation;
     }
-    
-
 }
