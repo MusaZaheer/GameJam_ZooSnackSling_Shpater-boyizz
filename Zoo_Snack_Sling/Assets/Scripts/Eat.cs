@@ -8,7 +8,7 @@ public class Eat : MonoBehaviour
 {
     public enum FoodType { Meat, Greenapple, Carrot ,Banana}
     public FoodType foodType;
-    public string wrongAnimal;
+    public string wrongAnimal; //
 
     // Tags for the respective animals
     private Dictionary<FoodType, string> foodToAnimalMap = new Dictionary<FoodType, string>
