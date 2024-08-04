@@ -1084,6 +1084,8 @@ MonoBehaviour:
   bottomLimit: 35
   z_upperLimit: 63
   z_lowerLimit: 38
+  minZoom: 10
+  maxZoom: 20
 --- !u!1 &426932924 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1254403252897968, guid: 1d3e21374171a4335a8a51ecb8bf2d17,

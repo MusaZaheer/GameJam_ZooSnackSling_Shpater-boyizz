@@ -16,8 +16,8 @@ public class PanZoom : MonoBehaviour
     [SerializeField] private float z_upperLimit;
     [SerializeField] private float z_lowerLimit;
     //zoom vars
-    // [SerializeField] private float minZoom = 1f;
-    // [SerializeField] private float maxZoom = 8f;
+    [SerializeField] private float minZoom;
+    [SerializeField] private float maxZoom;
     //other vars
     private Camera cam;
     private bool moveAllowed;
@@ -40,13 +40,23 @@ public class PanZoom : MonoBehaviour
             if(Input.touchCount == 2)
             {
                 //zooming mechanics
-                // Touch touchZero = Input.GetTouch(0);
-                // Touch touchOne = Input.GetTouch(1);
+                //checking both the touches positions
+                Touch touchZero = Input.GetTouch(0);
+                Touch touchOne = Input.GetTouch(1);
 
-                // if(EventSystem.current.IsPointerOverGameObject(touchZero.fingerId) || EventSystem.current.IsPointerOverGameObject(touchOne.fingerId))
-                // {
-                //     return;
-                // }
+                if(EventSystem.current.IsPointerOverGameObject(touchZero.fingerId) || EventSystem.current.IsPointerOverGameObject(touchOne.fingerId))
+                {
+                    return;
+                }
+
+                Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+                Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+
+                float distTouchPrev = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+                float currentDistTouch = (touchZero.position - touchOne.position).magnitude;
+
+                float difference = currentDistTouch - distTouchPrev;
+                Zoom(difference * 0.01f);
                 
             }
             //else if touched the fruit do not move the camera
@@ -107,6 +117,11 @@ public class PanZoom : MonoBehaviour
             }
         }
         return false; // Touch is not over a fruit object
+    }
+
+    private void Zoom(float increment)
+    {
+        cam.orthographicSize = Mathf.Clamp(cam.orthographicSize - increment, minZoom, maxZoom);
     }
 
     // private void OnDrawGizmos()
