@@ -1078,12 +1078,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57270a9617e74f46b85a2de38812a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightLimit: 0
-  leftLimit: -5
-  topLimit: 0
-  bottomLimit: -5
-  minZoom: 1
-  maxZoom: 8
+  rightLimit: -72
+  leftLimit: -72
+  topLimit: 45
+  bottomLimit: 35
+  z_upperLimit: 63
+  z_lowerLimit: 38
 --- !u!1 &426932924 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1254403252897968, guid: 1d3e21374171a4335a8a51ecb8bf2d17,

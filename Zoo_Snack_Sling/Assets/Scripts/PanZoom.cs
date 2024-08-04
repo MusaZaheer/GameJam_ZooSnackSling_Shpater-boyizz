@@ -13,14 +13,16 @@ public class PanZoom : MonoBehaviour
     [SerializeField] private float leftLimit;
     [SerializeField] private float topLimit;
     [SerializeField] private float bottomLimit;
+    [SerializeField] private float z_upperLimit;
+    [SerializeField] private float z_lowerLimit;
     //zoom vars
-    [SerializeField] private float minZoom = 1f;
-    [SerializeField] private float maxZoom = 8f;
+    // [SerializeField] private float minZoom = 1f;
+    // [SerializeField] private float maxZoom = 8f;
     //other vars
     private Camera cam;
     private bool moveAllowed;
     private Vector3 touchPos;
-    private string fruitTag;
+    private string fruitTag;//
 
     #endregion
 
@@ -81,11 +83,11 @@ public class PanZoom : MonoBehaviour
                             Vector3 direction = touchPos - cam.ScreenToWorldPoint(touch.position);
                             cam.transform.position += direction;
                             //clamp the camera position between the boundaries
-                            // cam.transform.position = new Vector3(
-                            //     Mathf.Clamp(cam.transform.position.x, leftLimit, rightLimit), 
-                            //     Mathf.Clamp(cam.transform.position.y, bottomLimit, topLimit), 
-                            //     cam.transform.position.z
-                            // );
+                            transform.position = new Vector3(
+                                Mathf.Clamp(cam.transform.position.x, leftLimit, rightLimit), 
+                                Mathf.Clamp(cam.transform.position.y, bottomLimit, topLimit), 
+                                Mathf.Clamp(cam.transform.position.z, z_lowerLimit, z_upperLimit)
+                            );
                         }
                         break;
                 }
@@ -107,13 +109,13 @@ public class PanZoom : MonoBehaviour
         return false; // Touch is not over a fruit object
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(new Vector3(
-            (rightLimit - Math.Abs(leftLimit) / 2), 
-            (topLimit - Math.Abs(bottomLimit) / 2), 
-            0), 
-            new Vector3(rightLimit - leftLimit, topLimit - bottomLimit));
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.yellow;
+    //     Gizmos.DrawWireCube(new Vector3(
+    //         (rightLimit - Math.Abs(leftLimit) / 2), 
+    //         (topLimit - Math.Abs(bottomLimit) / 2), 
+    //         0), 
+    //         new Vector3(rightLimit - leftLimit, topLimit - bottomLimit));
+    // }
 }
