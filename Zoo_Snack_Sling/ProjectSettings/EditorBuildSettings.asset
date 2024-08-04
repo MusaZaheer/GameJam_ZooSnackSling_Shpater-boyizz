@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Musa.unity
-    guid: f8111ae8e10801b4888cb332e0ef1c59
   - enabled: 1
     path: Assets/Scenes/SampleSceneMoeez.unity
     guid: 582dca8b3ab25c147a4eedc683c01b46
