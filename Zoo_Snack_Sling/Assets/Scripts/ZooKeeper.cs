@@ -41,23 +41,28 @@ public class ZookeeperPatrol : MonoBehaviour
     public Transform[] alertWaypoints; 
     public float normalSpeed = 3.5f;
     public float alertSpeedMultiplier = 2.5f;
+    public float speedBoostMultiplier = 2f;
     public int maxLives = 3;
 
     private int currentWaypointIndex = 0;
     private NavMeshAgent agent;
     private Coroutine alertCoroutine;
+    private Coroutine speedBoostCoroutine;
     private int currentLives;
     private bool isCooldown = false; 
     public Image[] hearts;
+    private Animator animator;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
         agent.speed = normalSpeed;
         currentLives = maxLives;
         if (fixedWaypoints.Length > 0)
         {
             agent.SetDestination(fixedWaypoints[currentWaypointIndex].position);
+            animator.SetBool("isWalking", true);
         }
         UpdateHeartsUI();
     }
@@ -68,6 +73,7 @@ public class ZookeeperPatrol : MonoBehaviour
         {
             currentWaypointIndex = (currentWaypointIndex + 1) % fixedWaypoints.Length;
             agent.SetDestination(fixedWaypoints[currentWaypointIndex].position);
+            animator.SetBool("isWalking", true);
         }
     }
 
@@ -91,14 +97,22 @@ public class ZookeeperPatrol : MonoBehaviour
     {
         agent.speed = normalSpeed * alertSpeedMultiplier;
         agent.SetDestination(alertWaypoints[waypointIndex].position);
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isRunning", true);
 
         while (agent.remainingDistance > agent.stoppingDistance || agent.pathPending)
         {
             yield return null;
         }
 
-        yield return new WaitForSeconds(2);
+        agent.isStopped = true;
+        animator.SetBool("isRunning", false);
+        animator.SetTrigger("HeadShake");
 
+        yield return new WaitForSeconds(5);
+
+        agent.isStopped = false;
+        animator.SetBool("isWalking", true);
         agent.speed = normalSpeed;
         alertCoroutine = null;
         agent.SetDestination(fixedWaypoints[currentWaypointIndex].position);
@@ -109,6 +123,11 @@ public class ZookeeperPatrol : MonoBehaviour
         if (other.CompareTag("tester") && !isCooldown)
         {
             StartCoroutine(LoseLifeWithCooldown());
+
+            if (currentLives > 0 && speedBoostCoroutine == null)
+            {
+                speedBoostCoroutine = StartCoroutine(SpeedBoost());
+            }
         }
     }
 
@@ -145,5 +164,31 @@ public class ZookeeperPatrol : MonoBehaviour
         {
             hearts[i].enabled = i < currentLives;
         }
+    }
+
+    private IEnumerator SpeedBoost()
+    {
+        agent.isStopped = true;
+        animator.SetBool("isWalking", false); 
+        animator.SetTrigger("HeadShake");
+
+        yield return new WaitForSeconds(2);
+
+        agent.isStopped = false;
+        float originalSpeed = agent.speed;
+        agent.speed = normalSpeed * speedBoostMultiplier;
+
+        animator.SetBool("isRunning", true);
+        if (fixedWaypoints.Length > 0)
+        {
+            agent.SetDestination(fixedWaypoints[currentWaypointIndex].position);
+        }
+    
+        yield return new WaitForSeconds(10);
+
+        agent.speed = originalSpeed;
+        speedBoostCoroutine = null;
+        animator.SetBool("isRunning", false);
+        animator.SetBool("isWalking", true); 
     }
 }
