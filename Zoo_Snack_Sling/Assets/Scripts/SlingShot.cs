@@ -158,11 +158,47 @@ public class SlingShot : MonoBehaviour
     //drawing the trajectory line
     void VisualizeTrajectory(Vector3 startPosition, Vector3 velocity)
 {
+    // Determine if there is any object in the path of the trajectory
+    if (IsTrajectoryClear(startPosition, velocity))
+    {
+        // No object detected, use the normal trajectory visualization
+        DrawNormalTrajectory(startPosition, velocity);
+    }
+    else
+    {
+        // Object detected, use the collision-aware trajectory visualization
+        DrawCollisionAwareTrajectory(startPosition, velocity);
+    }
+}
+
+bool IsTrajectoryClear(Vector3 startPosition, Vector3 velocity)
+{
+    int midNumPoints = Mathf.RoundToInt(numPoints / viusalizerTrimmer);
+    Vector3 previousPosition = startPosition;
+
+    for (int i = 0; i < midNumPoints; i++)
+    {
+        float t = i * timeStep;
+        Vector3 newPosition = CalculatePositionAtTime(startPosition, velocity, t);
+
+        // Check for collision between previousPosition and newPosition
+        if (Physics.Raycast(previousPosition, newPosition - previousPosition, out RaycastHit hit, Vector3.Distance(previousPosition, newPosition)))
+        {
+            return false; // Object detected
+        }
+
+        previousPosition = newPosition;
+    }
+
+    return true; // No object detected
+}
+
+void DrawNormalTrajectory(Vector3 startPosition, Vector3 velocity)
+{
     lineRenderer.positionCount = numPoints;
 
     // Calculate the total flight time
     float totalFlightTime = (2 * velocity.y / -Physics.gravity.y);
-    float halfFlightTime = totalFlightTime / 2;
     int midNumPoints = Mathf.RoundToInt(numPoints / viusalizerTrimmer);
 
     for (int i = 0; i < midNumPoints; i++)
@@ -176,13 +212,40 @@ public class SlingShot : MonoBehaviour
     lineRenderer.positionCount = midNumPoints;
 }
 
-    //calculating position of projectile when dragged till a specific position
-    Vector3 CalculatePositionAtTime(Vector3 startPosition, Vector3 initialVelocity, float time)
+void DrawCollisionAwareTrajectory(Vector3 startPosition, Vector3 velocity)
+{
+    int midNumPoints = Mathf.RoundToInt(numPoints / viusalizerTrimmer);
+    lineRenderer.positionCount = midNumPoints; // Set initial position count to the maximum possible points
+
+    Vector3 previousPosition = startPosition;
+    for (int i = 0; i < midNumPoints; i++)
     {
-        Vector3 gravity = Physics.gravity;
-        Vector3 position = startPosition + initialVelocity * time + 0.5f * gravity * time * time;
-        return position;
+        float t = i * timeStep;
+        Vector3 newPosition = CalculatePositionAtTime(startPosition, velocity, t);
+
+        // Check for collision between previousPosition and newPosition
+        if (Physics.Raycast(previousPosition, newPosition - previousPosition, out RaycastHit hit, Vector3.Distance(previousPosition, newPosition)))
+        {
+            // If a collision is detected, stop drawing the trajectory at the collision point
+            lineRenderer.positionCount = i + 1; // Update position count to the actual number of points drawn
+            lineRenderer.SetPosition(i, hit.point);
+            return;
+        }
+        else
+        {
+            lineRenderer.SetPosition(i, newPosition);
+            previousPosition = newPosition;
+        }
     }
+}
+
+Vector3 CalculatePositionAtTime(Vector3 startPosition, Vector3 initialVelocity, float time)
+{
+    Vector3 gravity = Physics.gravity;
+    Vector3 position = startPosition + initialVelocity * time + 0.5f * gravity * time * time;
+    return position;
+}
+
 
     //clear the trajectory line
     void ClearTrajectory()
