@@ -311,8 +311,8 @@ Transform:
   m_GameObject: {fileID: 2053301847271937283}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4340383, y: 0.027763437, z: -0.013383873, w: 0.9003671}
-  m_LocalPosition: {x: 0, y: 1.0850004, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalPosition: {x: -0.02, y: 0.34, z: -0.24}
+  m_LocalScale: {x: 13, y: 13, z: 13}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7098202999166069296}
@@ -758,16 +758,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e04c3ab6906a974aa96c97258905b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viusalizerTrimmer: 15
+  viusalizerTrimmer: 5
   slingshotAnchor: {fileID: 812828957463987621}
   projectileRb: {fileID: 4761547271654453832}
-  launchForceMultiplier: 7
+  launchForceMultiplier: 7.5
   lineRenderer: {fileID: 6237566531211479698}
   numPoints: 100
   timeStep: 0.1
   seconds: 3.5
   trailRenderer: {fileID: 994175998132901326}
-  maxStretch: 7
+  maxStretch: 7.5
   maxLeftLimit: -0.5
   maxRightLimit: 0.5
   launchStartPoint: {fileID: 672061263466664650}
@@ -838,16 +838,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e04c3ab6906a974aa96c97258905b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viusalizerTrimmer: 15
+  viusalizerTrimmer: 5
   slingshotAnchor: {fileID: 812828957463987621}
   projectileRb: {fileID: 7963784647399906802}
-  launchForceMultiplier: 7
+  launchForceMultiplier: 7.5
   lineRenderer: {fileID: 6237566531211479698}
   numPoints: 100
   timeStep: 0.1
   seconds: 3.5
   trailRenderer: {fileID: 1197420488621399291}
-  maxStretch: 7
+  maxStretch: 7.5
   maxLeftLimit: -0.5
   maxRightLimit: 0.5
   launchStartPoint: {fileID: 672061263466664650}
@@ -871,8 +871,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.05447514, y: 0.11442379, z: 0.18751013}
-  m_Center: {x: 0, y: 0.057277877, z: 0.013937748}
+  m_Size: {x: 0.045007296, y: 0.08286429, z: 0.1768041}
+  m_Center: {x: 0.0015779879, y: 0.05096603, z: 0.008584737}
 --- !u!1 &3032386769315416621
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,16 +918,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e04c3ab6906a974aa96c97258905b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viusalizerTrimmer: 15
+  viusalizerTrimmer: 5
   slingshotAnchor: {fileID: 812828957463987621}
   projectileRb: {fileID: 7074661307126468867}
-  launchForceMultiplier: 7
+  launchForceMultiplier: 7.5
   lineRenderer: {fileID: 6237566531211479698}
   numPoints: 100
   timeStep: 0.1
   seconds: 3.5
   trailRenderer: {fileID: 7412655554379755106}
-  maxStretch: 7
+  maxStretch: 7.5
   maxLeftLimit: -0.5
   maxRightLimit: 0.5
   launchStartPoint: {fileID: 672061263466664650}
@@ -951,8 +951,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.12, y: 0.03, z: 0.18}
-  m_Center: {x: 0, y: 0, z: 0.013937748}
+  m_Size: {x: 0.10952209, y: 0.030000178, z: 0.15105996}
+  m_Center: {x: 0.0070091328, y: -0.000000009729435, z: 0.006137613}
 --- !u!1 &4498561384575878252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,8 +1284,8 @@ Transform:
   m_GameObject: {fileID: 5300050218702376940}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.6614794, z: -0, w: 0.7499634}
-  m_LocalPosition: {x: 0, y: 1.0850004, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: -0, y: 0.02, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 298414055742589379}
@@ -1584,7 +1584,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fa9f2a404c3e1c643ad92b9c34b013c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1733,16 +1733,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e04c3ab6906a974aa96c97258905b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viusalizerTrimmer: 15
+  viusalizerTrimmer: 5
   slingshotAnchor: {fileID: 812828957463987621}
   projectileRb: {fileID: 2132034635975340858}
-  launchForceMultiplier: 7
+  launchForceMultiplier: 7.5
   lineRenderer: {fileID: 6237566531211479698}
   numPoints: 100
   timeStep: 0.1
   seconds: 2.5
   trailRenderer: {fileID: 5845215337614648091}
-  maxStretch: 7
+  maxStretch: 7.5
   maxLeftLimit: -0.5
   maxRightLimit: 0.5
   launchStartPoint: {fileID: 672061263466664650}
@@ -1780,7 +1780,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.2447007, y: 0.029883131, z: -0.007545517, w: 0.9691087}
   m_LocalPosition: {x: 0, y: 1.0850004, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2588706884097191202}
@@ -1855,8 +1855,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.3, y: 0.1, z: 0.25}
-  m_Center: {x: 0, y: 0, z: 0.013937748}
+  m_Size: {x: 0.3, y: 0.09878935, z: 0.25}
+  m_Center: {x: -1.899492e-10, y: -0.0006053347, z: 0.0139377415}
 --- !u!54 &7074661307126468867
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2050,7 +2050,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8222537370445904178}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7060328, y: -0.0389574, z: -0.0389574, w: 0.7060328}
+  m_LocalRotation: {x: -0.70603263, y: -0.038960446, z: -0.038960446, w: 0.70603263}
   m_LocalPosition: {x: -26, y: 0.84000015, z: 15}
   m_LocalScale: {x: 1.4999999, y: 1.5000002, z: 1.5}
   m_ConstrainProportionsScale: 0
@@ -2066,7 +2066,7 @@ Transform:
   - {fileID: 7260730690270816824}
   - {fileID: 4402152949749287283}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -6.317}
 --- !u!1 &8411974986461684726
 GameObject:
   m_ObjectHideFlags: 0
