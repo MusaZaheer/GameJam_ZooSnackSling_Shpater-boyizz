@@ -110,9 +110,9 @@ public class ZookeeperPatrol : MonoBehaviour
         animator.SetTrigger("HeadShake");
 
         yield return new WaitForSeconds(5);
-
-        agent.isStopped = false;
         animator.SetBool("isWalking", true);
+        agent.isStopped = false;
+        
         agent.speed = normalSpeed;
         alertCoroutine = null;
         agent.SetDestination(fixedWaypoints[currentWaypointIndex].position);
