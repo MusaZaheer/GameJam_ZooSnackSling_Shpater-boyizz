@@ -59,6 +59,7 @@ public class ZookeeperPatrol : MonoBehaviour
         animator = GetComponent<Animator>();
         agent.speed = normalSpeed;
         currentLives = maxLives;
+
         if (fixedWaypoints.Length > 0)
         {
             agent.SetDestination(fixedWaypoints[currentWaypointIndex].position);
@@ -69,11 +70,26 @@ public class ZookeeperPatrol : MonoBehaviour
 
     void Update()
     {
+        DetectTurning();
+
         if (alertCoroutine == null && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
             currentWaypointIndex = (currentWaypointIndex + 1) % fixedWaypoints.Length;
             agent.SetDestination(fixedWaypoints[currentWaypointIndex].position);
             animator.SetBool("isWalking", true);
+        }
+    }
+
+    void DetectTurning()
+    {
+        Debug.Log(agent.velocity.magnitude);
+        if (agent.velocity.magnitude > 2.5f)
+        {
+            animator.SetBool("isWalking", true);  // Walking animation
+        }
+        else
+        {
+            animator.SetBool("isWalking", false); // Stop walking
         }
     }
 
