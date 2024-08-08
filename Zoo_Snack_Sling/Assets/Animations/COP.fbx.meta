@@ -3,7 +3,12 @@ guid: 6540bda9f6327b44ca19b652511e5bdd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cop_blue_mat_Pbr
+    second: {fileID: 2100000, guid: ccf7ddaf8cb55674ca5df2d0d896d1a6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
