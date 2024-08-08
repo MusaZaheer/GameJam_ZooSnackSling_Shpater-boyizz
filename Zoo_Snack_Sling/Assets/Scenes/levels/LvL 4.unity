@@ -287,6 +287,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 986860808}
     m_Modifications:
+    - target: {fileID: 2019859860157755600, guid: 69d58b7b7e0cef041acc89dac3f1293d,
+        type: 3}
+      propertyPath: m_Name
+      value: Chicken Dance (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 5273161498722836738, guid: 69d58b7b7e0cef041acc89dac3f1293d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -336,11 +341,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019859860157755600, guid: 69d58b7b7e0cef041acc89dac3f1293d,
-        type: 3}
-      propertyPath: m_Name
-      value: Chicken Dance (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1310,6 +1310,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 986860808}
     m_Modifications:
+    - target: {fileID: 5313645175142746256, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
+        type: 3}
+      propertyPath: m_Name
+      value: Defeated (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 8906912686732819865, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1359,11 +1364,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5313645175142746256, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
-        type: 3}
-      propertyPath: m_Name
-      value: Defeated (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1627,6 +1627,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 986860808}
     m_Modifications:
+    - target: {fileID: 5313645175142746256, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
+        type: 3}
+      propertyPath: m_Name
+      value: Defeated (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 8906912686732819865, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1676,11 +1681,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5313645175142746256, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
-        type: 3}
-      propertyPath: m_Name
-      value: Defeated (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

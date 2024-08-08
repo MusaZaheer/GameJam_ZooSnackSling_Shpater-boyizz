@@ -11,6 +11,8 @@ TagManager:
   - Deer
   - Markhor
   - tester
+  - chimp
+  - Monkey
   layers:
   - Default
   - TransparentFX

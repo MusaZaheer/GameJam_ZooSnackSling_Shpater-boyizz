@@ -11,52 +11,52 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3012d011a43e8f345a4b91284eebce08,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3012d011a43e8f345a4b91284eebce08,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3012d011a43e8f345a4b91284eebce08,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3012d011a43e8f345a4b91284eebce08,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.9886255
+      value: -9.81
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3012d011a43e8f345a4b91284eebce08,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.29999924
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3012d011a43e8f345a4b91284eebce08,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.776001
+      value: -8.230732
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3012d011a43e8f345a4b91284eebce08,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9595795
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3012d011a43e8f345a4b91284eebce08,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3012d011a43e8f345a4b91284eebce08,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.28143778
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3012d011a43e8f345a4b91284eebce08,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3012d011a43e8f345a4b91284eebce08,
         type: 3}
@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3012d011a43e8f345a4b91284eebce08,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 32.692
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3012d011a43e8f345a4b91284eebce08,
         type: 3}
@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Deer_Animated
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3012d011a43e8f345a4b91284eebce08,
+        type: 3}
+      propertyPath: m_TagString
+      value: Deer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -95,6 +100,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5442098702247288878}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3012d011a43e8f345a4b91284eebce08,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 822387620899290961}
   m_SourcePrefab: {fileID: 100100000, guid: 3012d011a43e8f345a4b91284eebce08, type: 3}
 --- !u!1 &2875564884836494837 stripped
 GameObject:
@@ -144,3 +153,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.06702627, y: 0.22758168, z: 0.19775508}
   m_Center: {x: -0.006849851, y: 0.11379084, z: 0.033797517}
+--- !u!114 &822387620899290961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875564884836494837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f9cb02f31862a47a6a14ca8fc4c884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHunger: 3
+  currentHunger: 0
+  hungerBar: {fileID: 0}
+  full: 0
