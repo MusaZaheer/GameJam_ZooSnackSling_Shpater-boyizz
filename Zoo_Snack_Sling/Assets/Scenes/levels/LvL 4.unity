@@ -342,6 +342,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6658251413672492935, guid: 69d58b7b7e0cef041acc89dac3f1293d,
+        type: 3}
+      propertyPath: hungerBar
+      value: 
+      objectReference: {fileID: 331008113}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -635,6 +640,66 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 632f6913e2540514b8822404625e465b, type: 3}
+--- !u!114 &331008112 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 753903850060773425, guid: 632f6913e2540514b8822404625e465b,
+    type: 3}
+  m_PrefabInstance: {fileID: 331008111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &331008113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3843455875856193883, guid: 632f6913e2540514b8822404625e465b,
+    type: 3}
+  m_PrefabInstance: {fileID: 331008111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &331008114 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6388074528540757965, guid: 632f6913e2540514b8822404625e465b,
+    type: 3}
+  m_PrefabInstance: {fileID: 331008111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &331008115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4205193263767053275, guid: 632f6913e2540514b8822404625e465b,
+    type: 3}
+  m_PrefabInstance: {fileID: 331008111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &331008116 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1134625570639426141, guid: 632f6913e2540514b8822404625e465b,
+    type: 3}
+  m_PrefabInstance: {fileID: 331008111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &384228645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,6 +1818,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 986860808}
     m_Modifications:
+    - target: {fileID: 1915653490737033140, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
+        type: 3}
+      propertyPath: hungerBar
+      value: 
+      objectReference: {fileID: 331008114}
     - target: {fileID: 5313645175142746256, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
         type: 3}
       propertyPath: m_Name
@@ -2151,6 +2221,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 986860808}
     m_Modifications:
+    - target: {fileID: 1915653490737033140, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
+        type: 3}
+      propertyPath: hungerBar
+      value: 
+      objectReference: {fileID: 331008116}
     - target: {fileID: 5313645175142746256, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
         type: 3}
       propertyPath: m_Name
@@ -3589,6 +3664,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6658251413672492935, guid: 69d58b7b7e0cef041acc89dac3f1293d,
+        type: 3}
+      propertyPath: hungerBar
+      value: 
+      objectReference: {fileID: 331008112}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3614,6 +3694,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 986860808}
     m_Modifications:
+    - target: {fileID: 1915653490737033140, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
+        type: 3}
+      propertyPath: hungerBar
+      value: 
+      objectReference: {fileID: 331008115}
     - target: {fileID: 5313645175142746256, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
         type: 3}
       propertyPath: m_Name
