@@ -7,7 +7,8 @@ public class RestartLevel : MonoBehaviour
 {
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        EventManager.ClearAllEvents(); // Unsubscribe all events
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
