@@ -51,25 +51,25 @@ public class SlingshotReload : MonoBehaviour
         {
             Debug.Log("Steak Selected");
             SpawnSpecificFood(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Meat)));
-            RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Meat)));
+            //RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Meat)));
         }
         else if (Input.GetKeyDown(KeyCode.B))
         {
             Debug.Log("Banana Selected");
             SpawnSpecificFood(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Banana)));
-            RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Banana)));
+            //RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Banana)));
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             Debug.Log("Apple Selected");
             SpawnSpecificFood(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Greenapple)));
-            RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Greenapple)));
+            //RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Greenapple)));
         }
         else if (Input.GetKeyDown(KeyCode.C))
         {
             Debug.Log("Carrot Selected");
             SpawnSpecificFood(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Carrot)));
-            RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Carrot)));
+            //RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Carrot)));
         }
         
     }
@@ -179,7 +179,7 @@ public class SlingshotReload : MonoBehaviour
             RefereshPool(currentFoodIndex);
         }
         
-        for (int i=0 ; i<pooledfood.Count; i++)
+        for (int i=currentFoodIndex ; i<pooledfood.Count; i++)
         {
             if (!pooledfood[i].activeInHierarchy)
             {
