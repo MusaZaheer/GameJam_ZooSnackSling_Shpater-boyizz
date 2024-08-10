@@ -1420,10 +1420,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightLimit: -62
   leftLimit: -62
-  topLimit: 45
-  bottomLimit: 35
-  z_upperLimit: 63
-  z_lowerLimit: 38
+  topLimit: 40
+  bottomLimit: 32
+  z_upperLimit: 65
+  z_lowerLimit: 60
   minZoom: 10
   maxZoom: 20
 --- !u!114 &1301366437
