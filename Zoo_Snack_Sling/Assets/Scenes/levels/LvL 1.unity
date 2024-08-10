@@ -1369,6 +1369,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: slingshot complete
       objectReference: {fileID: 0}
+    - target: {fileID: 4459269901638305330, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459269901638305330, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 23.300003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459269901638305330, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.0699997
+      objectReference: {fileID: 0}
     - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
         type: 3}
       propertyPath: Appleprefab
@@ -1422,7 +1437,7 @@ PrefabInstance:
     - target: {fileID: 7699909418749220553, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26
+      value: -32.12
       objectReference: {fileID: 0}
     - target: {fileID: 7699909418749220553, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
         type: 3}
@@ -1432,7 +1447,7 @@ PrefabInstance:
     - target: {fileID: 7699909418749220553, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15
+      value: 25.56
       objectReference: {fileID: 0}
     - target: {fileID: 7699909418749220553, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
         type: 3}
