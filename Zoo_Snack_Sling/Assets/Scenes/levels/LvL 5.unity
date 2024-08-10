@@ -3168,12 +3168,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57270a9617e74f46b85a2de38812a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightLimit: -72
-  leftLimit: -72
-  topLimit: 45
-  bottomLimit: 35
-  z_upperLimit: 63
-  z_lowerLimit: 20
+  rightLimit: -62
+  leftLimit: -62
+  topLimit: 40
+  bottomLimit: 32
+  z_upperLimit: 75
+  z_lowerLimit: 26
   minZoom: 10
   maxZoom: 20
 --- !u!114 &1301366437
