@@ -13,6 +13,8 @@ TagManager:
   - tester
   - chimp
   - Monkey
+  - Pinguin
+  - tortoise
   layers:
   - Default
   - TransparentFX
