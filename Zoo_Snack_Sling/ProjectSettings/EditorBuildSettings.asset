@@ -8,4 +8,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleSceneMoeez.unity
     guid: 582dca8b3ab25c147a4eedc683c01b46
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2d1beca6fa38cfe4680934e065098e66
+  - enabled: 1
+    path: Assets/Scenes/levels/LvL 1.unity
+    guid: b282bc6bc4651c04794ec540577fe1b8
+  - enabled: 1
+    path: Assets/Scenes/levels/LvL 2.unity
+    guid: 2d5e8c275c53b5e42a3baf3586ae199f
+  - enabled: 1
+    path: Assets/Scenes/levels/LvL 3.unity
+    guid: e750b04c92c8af74a8fbac0d8d068b93
+  - enabled: 1
+    path: Assets/Scenes/levels/LvL 4.unity
+    guid: e9000a0bebfe85f43a3a6dcaf6c972b0
+  - enabled: 1
+    path: Assets/Scenes/levels/LvL 5.unity
+    guid: baa5ac768f76d934da6f613b5047cc97
+  - enabled: 1
+    path: Assets/Scenes/levels/LvL 6.unity
+    guid: 5c6418234c89d83459c9fb8f9f220919
   m_configObjects: {}
