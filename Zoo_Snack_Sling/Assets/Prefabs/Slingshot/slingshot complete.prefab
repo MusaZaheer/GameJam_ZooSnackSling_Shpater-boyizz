@@ -273,10 +273,12 @@ MonoBehaviour:
   - foodPrefab: {fileID: 5719415137345396346}
     numberOfFood: 2
     foodType: 2
-  Bananaprefab: {fileID: 7398699202368381321}
-  Steakprefab: {fileID: 5547045976050596813}
-  Appleprefab: {fileID: 7008022960700199616}
-  Carrotprefab: {fileID: 5719415137345396346}
+  - foodPrefab: {fileID: 1777185866294396807}
+    numberOfFood: 0
+    foodType: 2
+  - foodPrefab: {fileID: 345662675239916475}
+    numberOfFood: 2
+    foodType: 2
 --- !u!1 &1470083037796359948
 GameObject:
   m_ObjectHideFlags: 0
@@ -3078,6 +3080,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pear
       objectReference: {fileID: 0}
+    - target: {fileID: 3993196853935147428, guid: ba93ae1410e341d41be192f9d77df500,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4332884835618214686, guid: ba93ae1410e341d41be192f9d77df500,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3372,7 +3379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0656141f64c934d95d3891f3fb0348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodType: 0
+  foodType: 5
   wrongAnimal: 
 --- !u!1001 &3753852176155310853
 PrefabInstance:
@@ -4019,7 +4026,7 @@ PrefabInstance:
     - target: {fileID: 6765674851212242868, guid: 19778a1cec25085409918a09efe96dee,
         type: 3}
       propertyPath: m_Name
-      value: fish_001 (7)
+      value: fish_001
       objectReference: {fileID: 0}
     - target: {fileID: 6765674851212242868, guid: 19778a1cec25085409918a09efe96dee,
         type: 3}
@@ -4249,7 +4256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0656141f64c934d95d3891f3fb0348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodType: 0
+  foodType: 4
   wrongAnimal: 
 --- !u!4 &1119103772647819521 stripped
 Transform:

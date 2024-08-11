@@ -8,7 +8,7 @@ public class FoodPool
 {
     public GameObject foodPrefab;
     public int numberOfFood = 1;
-    public enum FoodType { Meat, Greenapple, Carrot, Banana }
+    public enum FoodType { Meat, Greenapple, Carrot, Banana, Fish, Pear }
     public FoodType foodType;
 }
 
@@ -16,10 +16,10 @@ public class SlingshotReload : MonoBehaviour
 {
     public static SlingshotReload mypool;   // making obj of this calss to be used in any other script
     public List<FoodPool> foodPool;         // all public data from user saved in this onj
-    public GameObject Bananaprefab;
-    public GameObject Steakprefab;
-    public GameObject Appleprefab;
-    public GameObject Carrotprefab;
+    //public GameObject Bananaprefab;
+    //public GameObject Steakprefab;
+    //public GameObject Appleprefab;
+    //public GameObject Carrotprefab;
     private List<GameObject> pooledfood;     // food currently present in the pool
     private List<GameObject> newPooledfood;
     private GameObject currentFood;          // Keep track of the current active food
@@ -71,7 +71,19 @@ public class SlingshotReload : MonoBehaviour
             SpawnSpecificFood(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Carrot)));
             //RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Carrot)));
         }
-        
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("Carrot Selected");
+            SpawnSpecificFood(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Pear)));
+            //RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Carrot)));
+        }
+        else if (Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log("Carrot Selected");
+            SpawnSpecificFood(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Fish)));
+            //RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Carrot)));
+        }
+
     }
     public string PrefabToNameConverter(FoodPool.FoodType foodtype)
     {
@@ -90,6 +102,14 @@ public class SlingshotReload : MonoBehaviour
         else if (foodtype == FoodPool.FoodType.Carrot)
         {
             return "carrot_001(Clone)";
+        }
+        else if (foodtype == FoodPool.FoodType.Fish)
+        {
+            return "fish_001(Clone)";
+        }
+        else if (foodtype == FoodPool.FoodType.Pear)
+        {
+            return "Pear(Clone)";
         }
         else { return "Unknown"; }
     }
