@@ -3593,7 +3593,7 @@ PrefabInstance:
     - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
         type: 3}
       propertyPath: foodPool.Array.data[0].numberOfFood
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
         type: 3}
@@ -3603,12 +3603,12 @@ PrefabInstance:
     - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
         type: 3}
       propertyPath: foodPool.Array.data[2].numberOfFood
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
         type: 3}
       propertyPath: foodPool.Array.data[3].numberOfFood
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
         type: 3}

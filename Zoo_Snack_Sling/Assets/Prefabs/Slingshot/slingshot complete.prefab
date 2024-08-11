@@ -3175,6 +3175,11 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.00023497338
       objectReference: {fileID: 0}
+    - target: {fileID: 4841372314594298938, guid: ba93ae1410e341d41be192f9d77df500,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4110,12 +4115,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.18509042, y: 0.13390036, z: 0.18944219}
-  m_Center: {x: 0.0021228492, y: 0.040859874, z: 0.0067849946}
+  m_Size: {x: 0.25485012, y: 0.20854367, z: 0.18944219}
+  m_Center: {x: 0.0021227181, y: 0.05578856, z: 0.0067849923}
 --- !u!145 &1620652364448324496
 SpringJoint:
   m_ObjectHideFlags: 0
