@@ -113,7 +113,32 @@ public class SlingshotReload : MonoBehaviour
         }
         else { return "Unknown"; }
     }
-    public void DeleteCurrentFood() { Destroy(currentFood);}
+    public void DeleteCurrentFood() 
+    {
+        
+
+        if (currentFood.name == "apple_001(Clone)"){ UpdateFoodCounter(FoodPool.FoodType.Greenapple); }
+        
+        else if (currentFood.name == "banana_001(Clone)") { UpdateFoodCounter(FoodPool.FoodType.Banana); }
+
+        else if (currentFood.name == "Steak(Clone)") { UpdateFoodCounter(FoodPool.FoodType.Meat); }
+
+        else if (currentFood.name == "carrot_001(Clone)") { UpdateFoodCounter(FoodPool.FoodType.Carrot); }
+
+        else if (currentFood.name == "fish_001(Clone)") { UpdateFoodCounter(FoodPool.FoodType.Fish); }
+
+        else if (currentFood.name == "Pear(Clone)") { UpdateFoodCounter(FoodPool.FoodType.Pear); }
+
+        { Destroy(currentFood); }
+    }
+    public void UpdateFoodCounter(FoodPool.FoodType typeOfFood)
+    {
+        foreach (FoodPool food in foodPool)
+        {
+            if (food.foodType == typeOfFood)
+            { food.numberOfFood--; }
+        }
+    }
     public  int SpecificFoodIndex(string foodname) 
     {
         int foodIndex = 0;
@@ -125,7 +150,7 @@ public class SlingshotReload : MonoBehaviour
                 foodIndex += 1;
             }
         }
-        Debug.Log("FoodIndex is "+ foodIndex);
+        //Debug.Log("FoodIndex is "+ foodIndex);
         return foodIndex;
     }
     public void RefereshPool(int foodIndex)
@@ -143,7 +168,7 @@ public class SlingshotReload : MonoBehaviour
 
         // Replace the old pool with the new one
         pooledfood = newPooledfood;
-        Debug.Log("Pool Refreshed");
+        //Debug.Log("Pool Refreshed");
     }
 
 
@@ -196,6 +221,7 @@ public class SlingshotReload : MonoBehaviour
         {
             currentFoodIndex = SpecificFoodIndex(currentFood.name);
             DeleteCurrentFood();
+            DisplayFoodRemaining();
             RefereshPool(currentFoodIndex);
         }
         
@@ -212,4 +238,18 @@ public class SlingshotReload : MonoBehaviour
         }
         
     }
+    public void DisplayFoodRemaining()
+    {
+        foreach(FoodPool food in  foodPool)
+        {
+            if(food.foodType == FoodPool.FoodType.Greenapple){ Debug.Log("Apples Remaining: "+ food.numberOfFood); }
+            else if (food.foodType == FoodPool.FoodType.Banana) { Debug.Log("Bananas Remaining: " + food.numberOfFood); }
+            else if (food.foodType == FoodPool.FoodType.Meat) { Debug.Log("Steak Remaining: " + food.numberOfFood); }
+            else if (food.foodType == FoodPool.FoodType.Carrot) { Debug.Log("Carrot Remaining: " + food.numberOfFood); }
+            else if (food.foodType == FoodPool.FoodType.Fish) { Debug.Log("Fishes Remaining: " + food.numberOfFood); }
+            else if (food.foodType == FoodPool.FoodType.Pear) { Debug.Log("Pear Remaining: " + food.numberOfFood); }
+        }
+    } 
+
 }
+

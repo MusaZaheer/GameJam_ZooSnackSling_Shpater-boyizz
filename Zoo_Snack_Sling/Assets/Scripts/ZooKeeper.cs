@@ -82,7 +82,7 @@ public class ZookeeperPatrol : MonoBehaviour
 
     void DetectTurning()
     {
-        Debug.Log(agent.velocity.magnitude);
+        //Debug.Log(agent.velocity.magnitude);
         if (agent.velocity.magnitude > 2.5f)
         {
             animator.SetBool("isWalking", true);  // Walking animation
