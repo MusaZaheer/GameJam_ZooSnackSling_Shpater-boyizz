@@ -51,6 +51,8 @@ public class SlingShot : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && foodAccess && IsMouseOnProjectile())
         {
             StartDrag();
+            AudioManager.instance.Play("Strecth");
+            Debug.Log("Stretch Sound Played");
         }
         if (Input.GetMouseButton(0) && isDragging)
         {
@@ -58,6 +60,9 @@ public class SlingShot : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0) && isDragging)
         {
+            AudioManager.instance.Stop("Strecth");
+            AudioManager.instance.Play("Release");
+            Debug.Log("Stretch Sound Stopped and Release Sound Played");
             DeattachSpringJoint();
             ClearTrajectory();
             ReleaseProjectile();
