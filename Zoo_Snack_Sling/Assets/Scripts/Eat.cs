@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class Eat : MonoBehaviour
 {
-    public enum FoodType { Meat, Greenapple, Carrot ,Banana}
+    public enum FoodType { Meat, Greenapple, Carrot ,Banana ,Fish ,Pear}
     public FoodType foodType;
     public string wrongAnimal; //
 
@@ -16,7 +16,9 @@ public class Eat : MonoBehaviour
         { FoodType.Meat, "Tiger" },
         { FoodType.Greenapple, "Deer" },
         { FoodType.Carrot, "Markhor" },
-        { FoodType.Banana, "Monkey" }
+        { FoodType.Banana, "Monkey" },
+        { FoodType.Fish, "Pinguin" },
+        { FoodType.Pear, "tortoise" }
     };
 
     private void OnTriggerEnter(Collider other)
