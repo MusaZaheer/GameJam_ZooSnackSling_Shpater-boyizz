@@ -42,6 +42,7 @@ public class Eat : MonoBehaviour
             else if (animalHunger.full)
             {
                 Debug.Log("Animal is full");
+                AudioManager.instance.Play("Full");
             }
         } 
         //Moeez, here we will know about the wrong animal, you can use the wrongAnimal variable for ur implementation. For now, the var is public.
@@ -49,10 +50,44 @@ public class Eat : MonoBehaviour
             ZookeeperPatrol zookeeper = FindObjectOfType<ZookeeperPatrol>();
             wrongAnimal = other.gameObject.tag;
             Debug.Log("Wrong animal: " + wrongAnimal);
+            PlayWrongSound(wrongAnimal);
             if (zookeeper != null)
             {
                 zookeeper.TriggerAlertByAnimalName(wrongAnimal);
             }
+        }
+        else{
+            AudioManager.instance.Play("Bounce");
+        }
+    }
+
+    // Play full sound based on the animal's tag
+    void PlayWrongSound(string animalTag)
+    {
+        switch (animalTag)
+        {
+            case "Deer":
+                AudioManager.instance.Play("Deer");
+                Debug.Log("Deer dont wanna eat this");
+                break;
+            case "Markhor":
+                AudioManager.instance.Play("Markhor");
+                break;
+            case "Monkey":
+                AudioManager.instance.Play("Monkey");
+                break;
+            case "Tiger":
+                AudioManager.instance.Play("Tiger");
+                break;
+            case "Pinguin":
+                AudioManager.instance.Play("Pinguin");
+                break;
+            case "tortoise":
+                AudioManager.instance.Play("tortoise");
+                break;
+            default:
+                //Debug.Log("No wrong sound found for this animal.");
+                break;
         }
     }
 }
