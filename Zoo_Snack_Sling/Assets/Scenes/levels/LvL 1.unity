@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17510968, g: 0.21907072, b: 0.30137175, a: 1}
+  m_IndirectSpecularColor: {r: 0.17511, g: 0.21907145, b: 0.3013729, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -313,12 +313,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106921208}
   m_CullTransparentMesh: 1
---- !u!1 &151586285 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7398699202368381321, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1645645078}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &402623519
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,18 +967,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1022992014}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1039760636 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5719415137345396346, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1645645078}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1230898636 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7008022960700199616, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1645645078}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1243328492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1630,12 +1612,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511763095}
   m_CullTransparentMesh: 1
---- !u!1 &1551928722 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5547045976050596813, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1645645078}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1645645078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1648,71 +1624,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: slingshot complete
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459269901638305330, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 19.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459269901638305330, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.710001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459269901638305330, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.09999975
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-        type: 3}
-      propertyPath: Appleprefab
-      value: 
-      objectReference: {fileID: 1230898636}
-    - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-        type: 3}
-      propertyPath: Steakprefab
-      value: 
-      objectReference: {fileID: 1551928722}
-    - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-        type: 3}
-      propertyPath: Bananaprefab
-      value: 
-      objectReference: {fileID: 151586285}
-    - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-        type: 3}
-      propertyPath: Carrotprefab
-      value: 
-      objectReference: {fileID: 1039760636}
-    - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-        type: 3}
-      propertyPath: foodPool.Array.data[0].foodType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-        type: 3}
-      propertyPath: foodPool.Array.data[1].foodType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-        type: 3}
-      propertyPath: foodPool.Array.data[3].foodType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-        type: 3}
-      propertyPath: foodPool.Array.data[0].numberOfFood
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-        type: 3}
-      propertyPath: foodPool.Array.data[2].numberOfFood
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582149277212517263, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
-        type: 3}
-      propertyPath: foodPool.Array.data[3].numberOfFood
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7699909418749220553, guid: dac4fb2e665aa3d4aa849bd7da3c93bd,
         type: 3}
