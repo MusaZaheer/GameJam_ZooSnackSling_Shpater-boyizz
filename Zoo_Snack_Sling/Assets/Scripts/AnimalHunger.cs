@@ -29,10 +29,12 @@ public class AnimalHunger : MonoBehaviour
             }
             Debug.Log("Current Hunger: " + currentHunger);
             UpdateHungerBar();  // Update hunger bar
+            AudioManager.instance.Play("Munch");  // Play the "Eat" sound
         }
         else
         {
-            Debug.Log("Animal is already full.");
+            //Debug.Log("Animal is already full.");
+            //PlayFullSound();  // Play the "Full" sound
         }
     }
 
@@ -40,4 +42,6 @@ public class AnimalHunger : MonoBehaviour
     {
         hungerBar.value = currentHunger;  // Set the hunger bar value to currentHunger
     }
+
+    
 }
