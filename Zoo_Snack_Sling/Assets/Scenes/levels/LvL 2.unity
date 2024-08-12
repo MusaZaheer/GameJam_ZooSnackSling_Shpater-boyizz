@@ -5749,6 +5749,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4696422107196046554, guid: 73cc78eef9612ea4a8e7336923a9c18c,
         type: 3}
+      propertyPath: GameOver
+      value: 
+      objectReference: {fileID: 1745023251}
+    - target: {fileID: 4696422107196046554, guid: 73cc78eef9612ea4a8e7336923a9c18c,
+        type: 3}
       propertyPath: hearts.Array.size
       value: 3
       objectReference: {fileID: 0}
