@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 using UnityEngine;
 
 [System.Serializable]
@@ -14,6 +15,20 @@ public class FoodPool
 
 public class SlingshotReload : MonoBehaviour
 {
+    public Text NoOfApple;
+    public Text NoOfBanana;
+    public Text NoOfSteak;
+    public Text NoOfCarrot;
+    public Text NoOfFish;
+    public Text NoOfPear;
+    
+    public static int NumberOfApple;
+    public static int NumberOfBanana;
+    public static int NumberOfSteak;
+    public static int NumberOfCarrot;
+    public static int NumberOfFish;
+    public static int NumberOfPear;
+
     public static SlingshotReload mypool;   // making obj of this calss to be used in any other script
     public List<FoodPool> foodPool;         // all public data from user saved in this onj
     //public GameObject Bananaprefab;
@@ -41,6 +56,31 @@ public class SlingshotReload : MonoBehaviour
                 obj.SetActive(false);
                 pooledfood.Add(obj);
             }
+            DisplayFoodRemaining();
+            //if (food.foodType == FoodPool.FoodType.Greenapple)
+            //{
+            //    NumberOfApple=food.numberOfFood;
+            //}
+            //if (food.foodType == FoodPool.FoodType.Banana)
+            //{
+            //    NumberOfBanana = food.numberOfFood;
+            //}
+            //if (food.foodType == FoodPool.FoodType.Meat)
+            //{
+            //    NumberOfSteak = food.numberOfFood;
+            //}
+            //if (food.foodType == FoodPool.FoodType.Carrot)
+            //{
+            //    NumberOfCarrot = food.numberOfFood;
+            //}
+            //if (food.foodType == FoodPool.FoodType.Fish)
+            //{
+            //    NumberOfFish = food.numberOfFood;
+            //}
+            //if (food.foodType == FoodPool.FoodType.Pear)
+            //{
+            //    NumberOfPear = food.numberOfFood;
+            //}
         }
 
         RespawnProjectile(); // Spawn the first food at the start
@@ -66,20 +106,23 @@ public class SlingshotReload : MonoBehaviour
         {
             Debug.Log("Carrot Selected");
             SpawnSpecificFood(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Carrot)));
-            //RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Carrot)));
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("Carrot Selected");
             SpawnSpecificFood(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Pear)));
-            //RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Carrot)));
         }
         else if (Input.GetKeyDown(KeyCode.F))
         {
             Debug.Log("Carrot Selected");
             SpawnSpecificFood(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Fish)));
-            //RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Carrot)));
         }
+        NoOfApple.text = "" + Mathf.Round(NumberOfApple);
+        NoOfBanana.text = "" + Mathf.Round(NumberOfBanana);
+        NoOfSteak.text = "" + Mathf.Round(NumberOfSteak);
+        NoOfCarrot.text = "" + Mathf.Round(NumberOfCarrot);
+        NoOfFish.text = "" + Mathf.Round(NumberOfFish);
+        NoOfPear.text = "" + Mathf.Round(NumberOfPear);
 
     }
     public string PrefabToNameConverter(FoodPool.FoodType foodtype)
@@ -133,8 +176,35 @@ public class SlingshotReload : MonoBehaviour
         foreach (FoodPool food in foodPool)
         {
             if (food.foodType == typeOfFood)
-            { food.numberOfFood--; }
+            { 
+                food.numberOfFood--; 
+            }
         }
+        if (typeOfFood == FoodPool.FoodType.Greenapple)
+        {
+            SlingshotReload.NumberOfApple--;
+        }
+        else if (typeOfFood == FoodPool.FoodType.Banana)
+        {
+            SlingshotReload.NumberOfBanana--;
+        }
+        else if (typeOfFood == FoodPool.FoodType.Meat)
+        {
+            SlingshotReload.NumberOfSteak--;
+        }
+        else if (typeOfFood == FoodPool.FoodType.Carrot)
+        {
+            SlingshotReload.NumberOfCarrot--;
+        }
+        else if (typeOfFood == FoodPool.FoodType.Fish)
+        {
+            SlingshotReload.NumberOfFish--;
+        }
+        else if (typeOfFood == FoodPool.FoodType.Pear)
+        {
+            SlingshotReload.NumberOfPear--;
+        }
+        
     }
     public  int SpecificFoodIndex(string foodname) 
     {
@@ -239,12 +309,36 @@ public class SlingshotReload : MonoBehaviour
     {
         foreach(FoodPool food in  foodPool)
         {
-            if(food.foodType == FoodPool.FoodType.Greenapple){ Debug.Log("Apples Remaining: "+ food.numberOfFood); }
-            else if (food.foodType == FoodPool.FoodType.Banana) { Debug.Log("Bananas Remaining: " + food.numberOfFood); }
-            else if (food.foodType == FoodPool.FoodType.Meat) { Debug.Log("Steak Remaining: " + food.numberOfFood); }
-            else if (food.foodType == FoodPool.FoodType.Carrot) { Debug.Log("Carrot Remaining: " + food.numberOfFood); }
-            else if (food.foodType == FoodPool.FoodType.Fish) { Debug.Log("Fishes Remaining: " + food.numberOfFood); }
-            else if (food.foodType == FoodPool.FoodType.Pear) { Debug.Log("Pear Remaining: " + food.numberOfFood); }
+            if(food.foodType == FoodPool.FoodType.Greenapple)
+            { 
+                Debug.Log("Apples Remaining: "+ food.numberOfFood);
+                NumberOfApple=food.numberOfFood;
+            }
+            else if (food.foodType == FoodPool.FoodType.Banana) 
+            {
+                NumberOfBanana=food.numberOfFood;
+                Debug.Log("Bananas Remaining: " + food.numberOfFood); 
+            }
+            else if (food.foodType == FoodPool.FoodType.Meat) 
+            {
+                NumberOfSteak=food.numberOfFood;
+                Debug.Log("Steak Remaining: " + food.numberOfFood); 
+            }
+            else if (food.foodType == FoodPool.FoodType.Carrot) 
+            {
+                NumberOfCarrot = food.numberOfFood;
+                Debug.Log("Carrot Remaining: " + food.numberOfFood); 
+            }
+            else if (food.foodType == FoodPool.FoodType.Fish) 
+            {
+                NumberOfFish = food.numberOfFood;
+                Debug.Log("Fishes Remaining: " + food.numberOfFood); 
+            }
+            else if (food.foodType == FoodPool.FoodType.Pear) 
+            {
+                NumberOfPear = food.numberOfFood;
+                Debug.Log("Pear Remaining: " + food.numberOfFood);
+            }
         }
     } 
 
