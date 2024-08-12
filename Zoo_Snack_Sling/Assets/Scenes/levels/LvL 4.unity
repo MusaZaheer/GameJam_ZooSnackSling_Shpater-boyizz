@@ -8726,11 +8726,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Defeated (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 5313645175142746256, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
-        type: 3}
-      propertyPath: m_TagString
-      value: chimp
-      objectReference: {fileID: 0}
     - target: {fileID: 8906912686732819865, guid: 3ef796e8b1c1d6446bf8dda3a7fc963d,
         type: 3}
       propertyPath: m_LocalPosition.x

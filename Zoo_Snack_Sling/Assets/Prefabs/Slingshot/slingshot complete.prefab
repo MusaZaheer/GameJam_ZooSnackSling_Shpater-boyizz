@@ -180,6 +180,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0a4335aa5bd3e4cba59a7ae83bc625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NoOfApple: {fileID: 0}
+  NoOfBanana: {fileID: 0}
+  NoOfSteak: {fileID: 0}
+  NoOfCarrot: {fileID: 0}
+  NoOfFish: {fileID: 0}
+  NoOfPear: {fileID: 0}
   foodPool:
   - foodPrefab: {fileID: 7008022960700199616}
     numberOfFood: 7
@@ -272,7 +278,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 7090192632065692184}
   numPoints: 100
   timeStep: 0.1
-  seconds: 2.5
+  seconds: 2
   trailRenderer: {fileID: 4691593367248795803}
   maxStretch: 7.5
   maxLeftLimit: -0.5
@@ -373,7 +379,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 7090192632065692184}
   numPoints: 100
   timeStep: 0.1
-  seconds: 3.5
+  seconds: 2
   trailRenderer: {fileID: 1984206253603238143}
   maxStretch: 7.5
   maxLeftLimit: -0.5
@@ -1902,7 +1908,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 7090192632065692184}
   numPoints: 100
   timeStep: 0.1
-  seconds: 3.5
+  seconds: 2
   trailRenderer: {fileID: 6122349349045010205}
   maxStretch: 7.5
   maxLeftLimit: -0.5
@@ -2201,7 +2207,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 7090192632065692184}
   numPoints: 100
   timeStep: 0.1
-  seconds: 3.5
+  seconds: 2
   trailRenderer: {fileID: 7244409946042455339}
   maxStretch: 7.5
   maxLeftLimit: -0.5
@@ -2321,6 +2327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: 0.03228712
+      objectReference: {fileID: 0}
+    - target: {fileID: 790321284335300202, guid: c1fe1a18f2f271b44a588465b6c6efd3,
+        type: 3}
+      propertyPath: seconds
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 790321284335300202, guid: c1fe1a18f2f271b44a588465b6c6efd3,
         type: 3}
@@ -2816,6 +2827,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pear
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445364420830816101, guid: 5eed7ffefa2afc541ad3fcfcd6af4a74,
+        type: 3}
+      propertyPath: seconds
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3445364420830816101, guid: 5eed7ffefa2afc541ad3fcfcd6af4a74,
         type: 3}
