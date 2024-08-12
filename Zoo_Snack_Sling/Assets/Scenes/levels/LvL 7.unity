@@ -4657,17 +4657,17 @@ PrefabInstance:
         type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 168805992}
     - target: {fileID: 4696422107196046554, guid: 73cc78eef9612ea4a8e7336923a9c18c,
         type: 3}
       propertyPath: hearts.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 350226694}
     - target: {fileID: 4696422107196046554, guid: 73cc78eef9612ea4a8e7336923a9c18c,
         type: 3}
       propertyPath: hearts.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1660166627}
     - target: {fileID: 4696422107196046554, guid: 73cc78eef9612ea4a8e7336923a9c18c,
         type: 3}
       propertyPath: alertWaypoints.Array.size
@@ -5603,7 +5603,11 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640908425}
+<<<<<<< Updated upstream
   m_Mesh: {fileID: 595332316}
+=======
+  m_Mesh: {fileID: 1239836566}
+>>>>>>> Stashed changes
 --- !u!4 &1640908429
 Transform:
   m_ObjectHideFlags: 0
