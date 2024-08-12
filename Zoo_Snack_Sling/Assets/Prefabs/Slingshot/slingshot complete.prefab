@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1008835683564510458}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7060328, y: 0.0389574, z: 0.0389574, w: 0.7060328}
-  m_LocalPosition: {x: 19.08, y: 18.710001, z: -0.09999975}
+  m_LocalPosition: {x: 19.24, y: 18.8, z: -0.09999975}
   m_LocalScale: {x: 0.66666675, y: 0.6666667, z: 0.6666665}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -182,23 +182,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodPool:
   - foodPrefab: {fileID: 7008022960700199616}
-    numberOfFood: 6
+    numberOfFood: 7
     foodType: 1
   - foodPrefab: {fileID: 7398699202368381321}
-    numberOfFood: 22
+    numberOfFood: 0
     foodType: 3
   - foodPrefab: {fileID: 5547045976050596813}
-    numberOfFood: 0
+    numberOfFood: 3
     foodType: 0
   - foodPrefab: {fileID: 5719415137345396346}
-    numberOfFood: 2
+    numberOfFood: 7
     foodType: 2
   - foodPrefab: {fileID: 1777185866294396807}
     numberOfFood: 0
-    foodType: 2
+    foodType: 5
   - foodPrefab: {fileID: 345662675239916475}
-    numberOfFood: 2
-    foodType: 2
+    numberOfFood: 0
+    foodType: 4
 --- !u!1 &1470083037796359948
 GameObject:
   m_ObjectHideFlags: 0
