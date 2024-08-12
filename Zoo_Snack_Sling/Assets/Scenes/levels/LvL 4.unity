@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17511, g: 0.21907145, b: 0.3013729, a: 1}
+  m_IndirectSpecularColor: {r: 0.17510968, g: 0.21907072, b: 0.30137175, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4025,12 +4025,6 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Full
     clip: {fileID: 8300000, guid: d3feb5095e2ef1a4abdb4df3c48fbb85, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Bounce
-    clip: {fileID: 8300000, guid: 8bfe09cbb5b1a4f4a9cdaa2f2a35bfe8, type: 3}
     volume: 1
     pitch: 1
     loop: 0

@@ -172,6 +172,7 @@ public class ZookeeperPatrol : MonoBehaviour
                 AudioManager.instance.Play("Stop");
                 Debug.Log("Game Over: Zookeeper ran out of lives.");
                 Time.timeScale = 0; 
+                //GameManager.instance.GameOver();
             }
         }
     }
