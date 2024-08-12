@@ -57,9 +57,6 @@ public class Eat : MonoBehaviour
                 zookeeper.TriggerAlertByAnimalName(wrongAnimal);
             }
         }
-        else{
-            AudioManager.instance.Play("Bounce");
-        }
     }
 
     // Play full sound based on the animal's tag
