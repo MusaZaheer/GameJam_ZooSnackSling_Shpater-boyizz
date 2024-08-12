@@ -53,6 +53,7 @@ public class Eat : MonoBehaviour
             PlayWrongSound(wrongAnimal);
             if (zookeeper != null)
             {
+                AudioManager.instance.Play("triggered");
                 zookeeper.TriggerAlertByAnimalName(wrongAnimal);
             }
         }

@@ -164,10 +164,12 @@ public class ZookeeperPatrol : MonoBehaviour
         {
             currentLives--;
             Debug.Log("Remaining Lives: " + currentLives);
+            AudioManager.instance.Play("Alert");
             UpdateHeartsUI();
             //Debug.Log("Remaining Lives: " + currentLives);
             if (currentLives <= 0)
             {
+                AudioManager.instance.Play("Stop");
                 Debug.Log("Game Over: Zookeeper ran out of lives.");
                 Time.timeScale = 0; 
             }
