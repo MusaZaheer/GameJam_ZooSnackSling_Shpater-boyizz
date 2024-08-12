@@ -51,19 +51,16 @@ public class SlingshotReload : MonoBehaviour
         {
             Debug.Log("Steak Selected");
             SpawnSpecificFood(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Meat)));
-            //RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Meat)));
         }
         else if (Input.GetKeyDown(KeyCode.B))
         {
             Debug.Log("Banana Selected");
             SpawnSpecificFood(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Banana)));
-            //RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Banana)));
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             Debug.Log("Apple Selected");
             SpawnSpecificFood(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Greenapple)));
-            //RefereshPool(SpecificFoodIndex(PrefabToNameConverter(FoodPool.FoodType.Greenapple)));
         }
         else if (Input.GetKeyDown(KeyCode.C))
         {
