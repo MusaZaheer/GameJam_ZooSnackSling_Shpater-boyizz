@@ -19,4 +19,12 @@ public class PauseScript : MonoBehaviour
             paused = true;
         }
     }
+    public void Resume()
+    {
+        if (paused)
+        {
+            Time.timeScale = 1;
+            paused = false;
+        }
+    }
 }

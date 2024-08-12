@@ -1573,7 +1573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c246789f79494841bba25b92d778e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: LvL 6
+  sceneName: LvL 8
 --- !u!114 &653210942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2113,7 +2113,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &910389531
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3021,7 +3021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1503071173
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4288,7 +4288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c246789f79494841bba25b92d778e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: LvL 6
+  sceneName: LvL 7
 --- !u!114 &1932730597
 MonoBehaviour:
   m_ObjectHideFlags: 0
