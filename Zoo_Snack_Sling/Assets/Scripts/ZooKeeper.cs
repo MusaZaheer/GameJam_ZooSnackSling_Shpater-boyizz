@@ -52,6 +52,7 @@ public class ZookeeperPatrol : MonoBehaviour
     private bool isCooldown = false; 
     public Image[] hearts;
     private Animator animator;
+    public GameObject GameOver;  // Reference to the Level Complete panel
 
     void Start()
     {
@@ -171,7 +172,8 @@ public class ZookeeperPatrol : MonoBehaviour
             {
                 AudioManager.instance.Play("Stop");
                 Debug.Log("Game Over: Zookeeper ran out of lives.");
-                Time.timeScale = 0; 
+                Time.timeScale = 0;
+                GameOver.SetActive(true);
                 //GameManager.instance.GameOver();
             }
         }
