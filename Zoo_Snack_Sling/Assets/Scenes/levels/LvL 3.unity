@@ -3469,17 +3469,17 @@ PrefabInstance:
         type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1224051260}
     - target: {fileID: 4696422107196046554, guid: 73cc78eef9612ea4a8e7336923a9c18c,
         type: 3}
       propertyPath: hearts.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 202529213}
     - target: {fileID: 4696422107196046554, guid: 73cc78eef9612ea4a8e7336923a9c18c,
         type: 3}
       propertyPath: hearts.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1239905553}
     - target: {fileID: 4696422107196046554, guid: 73cc78eef9612ea4a8e7336923a9c18c,
         type: 3}
       propertyPath: alertWaypoints.Array.size
